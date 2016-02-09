@@ -1,7 +1,0 @@
-F:\Github\AppSoft2.0.IO\App.IRepository\bin\Debug\App.IRepository.dll
-F:\Github\AppSoft2.0.IO\App.IRepository\bin\Debug\App.IRepository.pdb
-F:\Github\AppSoft2.0.IO\App.IRepository\bin\Debug\App.Entity.dll
-F:\Github\AppSoft2.0.IO\App.IRepository\bin\Debug\App.Entity.pdb
-F:\Github\AppSoft2.0.IO\App.IRepository\obj\Debug\App.IRepository.csprojResolveAssemblyReference.cache
-F:\Github\AppSoft2.0.IO\App.IRepository\obj\Debug\App.IRepository.dll
-F:\Github\AppSoft2.0.IO\App.IRepository\obj\Debug\App.IRepository.pdb

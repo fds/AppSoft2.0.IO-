@@ -1,5 +1,0 @@
-F:\Github\AppSoft2.0.IO\App.SqlSugarHelper\bin\Debug\App.SqlSugarHelper.dll
-F:\Github\AppSoft2.0.IO\App.SqlSugarHelper\bin\Debug\App.SqlSugarHelper.pdb
-F:\Github\AppSoft2.0.IO\App.SqlSugarHelper\bin\Debug\SqlSugar.dll
-F:\Github\AppSoft2.0.IO\App.SqlSugarHelper\obj\Debug\App.SqlSugarHelper.dll
-F:\Github\AppSoft2.0.IO\App.SqlSugarHelper\obj\Debug\App.SqlSugarHelper.pdb
