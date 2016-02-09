@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\App.Site\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SqlSugar">
+      <HintPath>..\App.Vector\SqlSugar\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +60,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Entity\App.Entity.csproj">
+      <Project>{a63bd9be-667b-403e-99d9-21d21018062f}</Project>
+      <Name>App.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.IRepository\App.IRepository.csproj">
+      <Project>{d30bee00-49a4-4606-bda2-2c0e5fa98058}</Project>
+      <Name>App.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.SqlSugarHelper\App.SqlSugarHelper.csproj">
+      <Project>{bf80e4cc-f5f8-499b-9be7-6c1efb9d260c}</Project>
+      <Name>App.SqlSugarHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

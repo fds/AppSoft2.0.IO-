@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App.IServices;
+using App.IRepository;
 using System.Linq.Expressions;
-using SqlSugar;
 
 /*!
- * 插件名称：SqlSugar客户端操作封装库
+ * 插件名称：服务基类
  * 插件作者：新生帝
  * 编写日期：2016年02月10日
  * 版权所有：中山赢友网络科技有限公司
@@ -16,10 +17,12 @@ using SqlSugar;
  * 插件描述：一切从简，只为了更懒！
  */
 
-namespace App.SqlSugarHelper
+namespace App.Services
 {
-    public class ClientSqlSugar<T> where T : class, new()
+    public partial class BaseServices<T> : IBaseServices<T> where T : class, new()
     {
+        protected IBaseRepository<T> _IBaseRepository;
+
         #region 方法：插入数据 + public object Insert(T entity, bool isIdentity = true)
         /// <summary>
         /// 插入数据
@@ -29,10 +32,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public object Insert(T entity, bool isIdentity = true)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Insert<T>(entity, isIdentity);
-            }
+            return _IBaseRepository.Insert(entity, isIdentity);
         }
         #endregion
 
@@ -45,19 +45,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public List<object> InsertRange(List<T> entites, bool isIdentity = true)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                try
-                {
-                    dbClient.BeginTran();
-                    return dbClient.InsertRange<T>(entites, isIdentity);
-                }
-                catch (Exception ex)
-                {
-                    dbClient.RollbackTran();
-                    throw ex;
-                }
-            }
+            return _IBaseRepository.InsertRange(entites, isIdentity);
         }
         #endregion
 
@@ -71,19 +59,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public bool Update<FiledType>(object model, params FiledType[] whereIn)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                try
-                {
-                    dbClient.BeginTran();
-                    return dbClient.Update<T, FiledType>(model, whereIn);
-                }
-                catch (Exception ex)
-                {
-                    dbClient.RollbackTran();
-                    throw ex;
-                }
-            }
+            return _IBaseRepository.Update<FiledType>(model, whereIn);
         }
         #endregion
 
@@ -96,19 +72,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public bool Update(object model, Expression<Func<T, bool>> expression)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                try
-                {
-                    dbClient.BeginTran();
-                    return dbClient.Update<T>(model, expression);
-                }
-                catch (Exception ex)
-                {
-                    dbClient.RollbackTran();
-                    throw ex;
-                }
-            }
+            return _IBaseRepository.Update(model, expression);
         }
         #endregion
 
@@ -121,19 +85,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public bool Delete<FiledType>(params FiledType[] whereIn)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                try
-                {
-                    dbClient.BeginTran();
-                    return dbClient.Delete<T, FiledType>(whereIn);
-                }
-                catch (Exception ex)
-                {
-                    dbClient.RollbackTran();
-                    throw ex;
-                }
-            }
+            return _IBaseRepository.Delete<FiledType>(whereIn);
         }
         #endregion
 
@@ -145,19 +97,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public bool Delete(Expression<Func<T, bool>> expression)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                try
-                {
-                    dbClient.BeginTran();
-                    return dbClient.Delete<T>(expression);
-                }
-                catch (Exception ex)
-                {
-                    dbClient.RollbackTran();
-                    throw ex;
-                }
-            }
+            return _IBaseRepository.Delete(expression);
         }
         #endregion
 
@@ -171,19 +111,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public bool FalseDelete<FiledType>(string filed, params FiledType[] whereIn)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                try
-                {
-                    dbClient.BeginTran();
-                    return dbClient.FalseDelete<T, FiledType>(filed, whereIn);
-                }
-                catch (Exception ex)
-                {
-                    dbClient.RollbackTran();
-                    throw ex;
-                }
-            }
+            return _IBaseRepository.FalseDelete<FiledType>(filed, whereIn);
         }
         #endregion
 
@@ -196,19 +124,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public bool FalseDelete(string filed, Expression<Func<T, bool>> expression)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                try
-                {
-                    dbClient.BeginTran();
-                    return dbClient.FalseDelete<T>(filed, expression);
-                }
-                catch (Exception ex)
-                {
-                    dbClient.RollbackTran();
-                    throw ex;
-                }
-            }
+            return _IBaseRepository.FalseDelete(filed, expression);
         }
         #endregion
 
@@ -219,10 +135,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public T QuerySingle()
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Single();
-            }
+            return _IBaseRepository.QuerySingle();
         }
         #endregion
 
@@ -234,44 +147,35 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public T QuerySingle(Expression<Func<T, bool>> expression)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Single(expression);
-            }
+            return _IBaseRepository.QuerySingle(expression);
         }
         #endregion
 
-        #region 方法：查询所有 + public Queryable<T> QueryAll()
+        #region 方法：查询所有 + public List<T> QueryAll()
         /// <summary>
         /// 查询所有
         /// </summary>
         /// <returns></returns>
-        public Queryable<T> QueryAll()
+        public List<T> QueryAll()
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>();
-            }
+            return _IBaseRepository.QueryAll();
         }
         #endregion
 
-        #region 方法：查询所有 + public Queryable<T> QueryByWhere(Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        #region 方法：查询所有 + public List<T> QueryByWhere(Expression<Func<T, bool>> whereExpression, string orderbyStr)
         /// <summary>
         /// 查询所有
         /// </summary>
         /// <param name="whereExpression">条件表达式</param>
         /// <param name="orderbyStr">排序字符串</param>
         /// <returns></returns>
-        public Queryable<T> QueryByWhere(Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        public List<T> QueryByWhere(Expression<Func<T, bool>> whereExpression, string orderbyStr)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).OrderBy(orderbyStr);
-            }
+            return _IBaseRepository.QueryByWhere(whereExpression, orderbyStr);
         }
         #endregion
 
-        #region 方法：查询所有 + public Queryable<T> QueryByWhere(Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
+        #region 方法：查询所有 + public List<T> QueryByWhere(Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
         /// <summary>
         /// 查询所有
         /// </summary>
@@ -280,12 +184,9 @@ namespace App.SqlSugarHelper
         /// <param name="whereString">where字符串</param>
         /// <param name="whereObj">命令参数对应匿名对象</param>
         /// <returns></returns>
-        public Queryable<T> QueryByWhere(Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
+        public List<T> QueryByWhere(Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).Where(whereString, whereObj).OrderBy(orderbyStr);
-            }
+            return _IBaseRepository.QueryByWhere(whereExpression, orderbyStr, whereString, whereObj);
         }
         #endregion
 
@@ -300,10 +201,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public List<T> QueryByWherePage(int pageIndex, int pageSize, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).OrderBy(orderbyStr).ToPageList(pageIndex, pageSize);
-            }
+            return _IBaseRepository.QueryByWherePage(pageIndex, pageSize, whereExpression, orderbyStr);
         }
         #endregion
 
@@ -320,14 +218,11 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public List<T> QueryByWherePage(int pageIndex, int pageSize, Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).Where(whereString, whereObj).OrderBy(orderbyStr).ToPageList(pageIndex, pageSize);
-            }
+            return _IBaseRepository.QueryByWherePage(pageIndex, pageSize, whereExpression, orderbyStr, whereString, whereObj);
         }
         #endregion
 
-        #region 方法：查询索引多少到多少条 + public Queryable<T> QueryByRange(int skipNum, int takeNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        #region 方法：查询索引多少到多少条 + public List<T> QueryByRange(int skipNum, int takeNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         /// <summary>
         /// 查询索引多少到多少条
         /// </summary>
@@ -336,16 +231,13 @@ namespace App.SqlSugarHelper
         /// <param name="whereExpression">条件表达式</param>
         /// <param name="orderbyStr">排序字段</param>
         /// <returns></returns>
-        public Queryable<T> QueryByRange(int skipNum, int takeNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        public List<T> QueryByRange(int skipNum, int takeNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).OrderBy(orderbyStr).Skip(skipNum).Take(takeNum);
-            }
+            return _IBaseRepository.QueryByRange(skipNum, takeNum, whereExpression, orderbyStr);
         }
         #endregion
 
-        #region 方法：查询索引后的所有数据 + public Queryable<T> QuerySkipfterIndex(int skipNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        #region 方法：查询索引后的所有数据 + public List<T> QuerySkipfterIndex(int skipNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         /// <summary>
         /// 查询索引后的所有数据
         /// </summary>
@@ -353,16 +245,13 @@ namespace App.SqlSugarHelper
         /// <param name="whereExpression">条件表达式</param>
         /// <param name="orderbyStr">排序字段</param>
         /// <returns></returns>
-        public Queryable<T> QuerySkipfterIndex(int skipNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        public List<T> QuerySkipfterIndex(int skipNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).OrderBy(orderbyStr).Skip(skipNum);
-            }
+            return _IBaseRepository.QuerySkipfterIndex(skipNum, whereExpression, orderbyStr);
         }
         #endregion
 
-        #region 方法：查询指定个数的数据 + public Queryable<T> QueryTakeIndex(int takeNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        #region 方法：查询指定个数的数据 + public List<T> QueryTakeIndex(int takeNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         /// <summary>
         /// 查询指定个数的数据
         /// </summary>
@@ -370,12 +259,9 @@ namespace App.SqlSugarHelper
         /// <param name="whereExpression">条件表达式</param>
         /// <param name="orderbyStr">排序字段</param>
         /// <returns></returns>
-        public Queryable<T> QueryTakeIndex(int takeNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        public List<T> QueryTakeIndex(int takeNum, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).OrderBy(orderbyStr).Take(takeNum);
-            }
+            return _IBaseRepository.QueryTakeIndex(takeNum, whereExpression, orderbyStr);
         }
         #endregion
 
@@ -387,10 +273,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public int QueryCount(Expression<Func<T, bool>> whereExpression)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).Count();
-            }
+            return _IBaseRepository.QueryCount(whereExpression);
         }
         #endregion
 
@@ -402,14 +285,11 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public bool Any(Expression<Func<T, bool>> whereExpression)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Any(whereExpression);
-            }
+            return _IBaseRepository.Any(whereExpression);
         }
         #endregion
 
-        #region 方法：分组查询 + public Queryable<TResult> QueryByGroup<TResult>(string groupbyFiles, string selectStr, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        #region 方法：分组查询 + public List<TResult> QueryByGroup<TResult>(string groupbyFiles, string selectStr, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         /// <summary>
         /// 分组查询
         /// </summary>
@@ -419,16 +299,13 @@ namespace App.SqlSugarHelper
         /// <param name="whereExpression">条件表达式</param>
         /// <param name="orderbyStr">排序字段</param>
         /// <returns></returns>
-        public Queryable<TResult> QueryByGroup<TResult>(string groupbyFiles, string selectStr, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        public List<TResult> QueryByGroup<TResult>(string groupbyFiles, string selectStr, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).GroupBy(groupbyFiles).Select<T, TResult>(selectStr).OrderBy(orderbyStr);
-            }
+            return _IBaseRepository.QueryByGroup<TResult>(groupbyFiles, selectStr, whereExpression, orderbyStr);
         }
         #endregion
 
-        #region 方法：分组查询 + public Queryable<TResult> QueryByGroup<TResult>(string groupbyFiles, string selectStr, Expression<Func<T, bool>> whereExpression, string orderbyStr,string whereString = "1=1", object whereObj = null)
+        #region 方法：分组查询 + public List<TResult> QueryByGroup<TResult>(string groupbyFiles, string selectStr, Expression<Func<T, bool>> whereExpression, string orderbyStr,string whereString = "1=1", object whereObj = null)
         /// <summary>
         /// 分组查询
         /// </summary>
@@ -440,16 +317,13 @@ namespace App.SqlSugarHelper
         /// <param name="whereString">where字符串</param>
         /// <param name="whereObj">命令参数对应匿名对象</param>
         /// <returns></returns>
-        public Queryable<TResult> QueryByGroup<TResult>(string groupbyFiles, string selectStr, Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
+        public List<TResult> QueryByGroup<TResult>(string groupbyFiles, string selectStr, Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).Where(whereString, whereObj).GroupBy(groupbyFiles).Select<T, TResult>(selectStr).OrderBy(orderbyStr);
-            }
+            return _IBaseRepository.QueryByGroup<TResult>(groupbyFiles, selectStr, whereExpression, orderbyStr, whereString, whereObj);
         }
         #endregion
 
-        #region 方法：分组查询 + public Queryable<TResult> QueryByGroup<TResult>(string groupbyFiles, Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        #region 方法：分组查询 + public List<TResult> QueryByGroup<TResult>(string groupbyFiles, Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         /// <summary>
         /// 分组查询
         /// </summary>
@@ -459,16 +333,13 @@ namespace App.SqlSugarHelper
         /// <param name="whereExpression">条件表达式</param>
         /// <param name="orderbyStr">排序字段</param>
         /// <returns></returns>
-        public Queryable<TResult> QueryByGroup<TResult>(string groupbyFiles, Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>> whereExpression, string orderbyStr)
+        public List<TResult> QueryByGroup<TResult>(string groupbyFiles, Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>> whereExpression, string orderbyStr)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).GroupBy(groupbyFiles).Select<T, TResult>(selectExpression).OrderBy(orderbyStr);
-            }
+            return _IBaseRepository.QueryByGroup<TResult>(groupbyFiles, selectExpression, whereExpression, orderbyStr);
         }
         #endregion
 
-        #region 方法：分组查询 + public Queryable<TResult> QueryByGroup<TResult>(string groupbyFiles, Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
+        #region 方法：分组查询 + public List<TResult> QueryByGroup<TResult>(string groupbyFiles, Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
         /// <summary>
         /// 分组查询
         /// </summary>
@@ -480,12 +351,9 @@ namespace App.SqlSugarHelper
         /// <param name="whereString">where字符串</param>
         /// <param name="whereObj">命令参数对应匿名对象</param>
         /// <returns></returns>
-        public Queryable<TResult> QueryByGroup<TResult>(string groupbyFiles, Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
+        public List<TResult> QueryByGroup<TResult>(string groupbyFiles, Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>> whereExpression, string orderbyStr, string whereString = "1=1", object whereObj = null)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.Queryable<T>().Where(whereExpression).Where(whereString, whereObj).GroupBy(groupbyFiles).Select<T, TResult>(selectExpression).OrderBy(orderbyStr);
-            }
+            return _IBaseRepository.QueryByGroup<TResult>(groupbyFiles, selectExpression, whereExpression, orderbyStr, whereString, whereObj);
         }
         #endregion
 
@@ -499,10 +367,7 @@ namespace App.SqlSugarHelper
         /// <returns></returns>
         public List<TResult> QueryBySql<TResult>(string sql, object whereObj = null)
         {
-            using (SqlSugarClient dbClient = SqlSugarInstance.GetInstance())
-            {
-                return dbClient.SqlQuery<TResult>(sql, whereObj);
-            }
+            return _IBaseRepository.QueryBySql<TResult>(sql, whereObj);
         }
         #endregion
 

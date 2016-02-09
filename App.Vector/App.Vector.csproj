@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Autofac\Autofac.Configuration.dll" />
+    <Content Include="Autofac\Autofac.dll" />
+    <Content Include="Autofac\Autofac.Integration.Mvc.dll" />
+    <Content Include="Autofac\Autofac.Integration.WebApi.dll" />
     <Content Include="SqlSugar\SqlSugar.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

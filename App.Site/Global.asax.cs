@@ -14,10 +14,13 @@ namespace App.Site
     {
         void Application_Start(object sender, EventArgs e)
         {
+            // 开始注入
+            Bootstrapper.StartRegisterDependencies();
+
             // 在应用程序启动时运行的代码
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }

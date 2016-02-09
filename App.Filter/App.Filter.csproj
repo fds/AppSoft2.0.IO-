@@ -43,6 +43,12 @@
     <Compile Include="Default.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Library\App.Library.csproj">
+      <Project>{444659fb-5de7-4ea8-8c90-b5c715b75c08}</Project>
+      <Name>App.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

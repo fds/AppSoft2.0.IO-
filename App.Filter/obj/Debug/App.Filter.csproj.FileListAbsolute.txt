@@ -2,3 +2,6 @@ F:\Github\AppSoft2.0.IO\App.Filter\bin\Debug\App.Filter.dll
 F:\Github\AppSoft2.0.IO\App.Filter\bin\Debug\App.Filter.pdb
 F:\Github\AppSoft2.0.IO\App.Filter\obj\Debug\App.Filter.dll
 F:\Github\AppSoft2.0.IO\App.Filter\obj\Debug\App.Filter.pdb
+F:\Github\AppSoft2.0.IO\App.Filter\bin\Debug\App.Library.dll
+F:\Github\AppSoft2.0.IO\App.Filter\bin\Debug\App.Library.pdb
+F:\Github\AppSoft2.0.IO\App.Filter\obj\Debug\App.Filter.csprojResolveAssemblyReference.cache

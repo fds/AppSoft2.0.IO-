@@ -45,6 +45,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
