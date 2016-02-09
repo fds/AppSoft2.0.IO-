@@ -38,3 +38,4 @@ F:\Github\AppSoft2.0.IO\App.RESTful API\bin\System.Web.Http.xml
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\System.Web.Http.WebHost.xml
 F:\Github\AppSoft2.0.IO\App.RESTful API\obj\Debug\App.RESTful API.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\obj\Debug\App.RESTful API.pdb
+F:\Github\AppSoft2.0.IO\App.RESTful API\obj\Debug\App.RESTful API.csprojResolveAssemblyReference.cache

@@ -17,23 +17,23 @@ using SqlSugar;
 
 namespace App.SqlSugarHelper
 {
-    public class SqlSugarEntity
+    public class SqlSugarInstance
     {
-        #region 构造：无参构造函数，禁止实例化 + public SqlSugarEntity()
+        #region 构造：无参构造函数，禁止实例化 + public SqlSugarInstance()
         /// <summary>
         /// 禁止实例化
         /// </summary>
-        public SqlSugarEntity()
+        public SqlSugarInstance()
         {
         }
         #endregion
 
-        #region 静态：获取Sugar客户端实例对象 + public static SqlSugarClient GetEntity()
+        #region 静态：获取Sugar客户端实例对象 + public static SqlSugarClient GetInstance()
         /// <summary>
         /// 获取Sugar客户端实例对象
         /// </summary>
         /// <returns>SqlSugarClient</returns>
-        public static SqlSugarClient GetEntity()
+        public static SqlSugarClient GetInstance()
         {
             string connection = System.Configuration.ConfigurationManager.ConnectionStrings[@"AppSoft.IO_ConnStr"].ToString();
             return new SqlSugarClient(connection);

@@ -51,3 +51,4 @@ F:\Github\AppSoft2.0.IO\App.Site\bin\System.Web.Http.xml
 F:\Github\AppSoft2.0.IO\App.Site\bin\System.Web.Http.WebHost.xml
 F:\Github\AppSoft2.0.IO\App.Site\obj\Debug\App.Site.dll
 F:\Github\AppSoft2.0.IO\App.Site\obj\Debug\App.Site.pdb
+F:\Github\AppSoft2.0.IO\App.Site\obj\Debug\App.Site.csprojResolveAssemblyReference.cache
