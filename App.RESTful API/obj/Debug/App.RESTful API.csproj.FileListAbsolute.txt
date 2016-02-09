@@ -14,6 +14,14 @@ F:\Github\AppSoft2.0.IO\App.RESTful API\bin\roslyn\VBCSCompiler.exe.config
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.RESTful API.dll.config
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.RESTful API.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.RESTful API.pdb
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Entity.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Filter.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.IServices.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Library.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.Configuration.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.Integration.Mvc.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.Integration.WebApi.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.Agent.Intercept.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.DependencyCollector.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -26,6 +34,10 @@ F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Newtonsoft.Json.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\System.Net.Http.Formatting.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\System.Web.Http.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\System.Web.Http.WebHost.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Entity.pdb
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Filter.pdb
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.IServices.pdb
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Library.pdb
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.DependencyCollector.xml
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.ServerTelemetryChannel.xml
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.Web.xml
@@ -39,5 +51,6 @@ F:\Github\AppSoft2.0.IO\App.RESTful API\bin\System.Web.Http.WebHost.xml
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\zh-Hans\System.Web.Http.resources.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+F:\Github\AppSoft2.0.IO\App.RESTful API\obj\Debug\App.RESTful API.csprojResolveAssemblyReference.cache
 F:\Github\AppSoft2.0.IO\App.RESTful API\obj\Debug\App.RESTful API.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\obj\Debug\App.RESTful API.pdb

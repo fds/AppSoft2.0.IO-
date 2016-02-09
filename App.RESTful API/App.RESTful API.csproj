@@ -43,6 +43,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\App.Vector\Autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\App.Vector\Autofac\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\App.Vector\Autofac\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi">
+      <HintPath>..\App.Vector\Autofac\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -137,6 +149,24 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Entity\App.Entity.csproj">
+      <Project>{a63bd9be-667b-403e-99d9-21d21018062f}</Project>
+      <Name>App.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Filter\App.Filter.csproj">
+      <Project>{d2d5d7f9-f42d-40d1-b222-f38311128c37}</Project>
+      <Name>App.Filter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.IServices\App.IServices.csproj">
+      <Project>{9cfecb50-179a-4c7d-abb5-bb0dab70504a}</Project>
+      <Name>App.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Library\App.Library.csproj">
+      <Project>{444659fb-5de7-4ea8-8c90-b5c715b75c08}</Project>
+      <Name>App.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
