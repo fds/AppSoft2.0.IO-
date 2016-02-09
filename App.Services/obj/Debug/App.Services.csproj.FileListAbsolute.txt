@@ -6,3 +6,8 @@ F:\Github\AppSoft2.0.IO\App.Services\bin\Debug\App.IServices.dll
 F:\Github\AppSoft2.0.IO\App.Services\bin\Debug\App.Entity.pdb
 F:\Github\AppSoft2.0.IO\App.Services\bin\Debug\App.IRepository.pdb
 F:\Github\AppSoft2.0.IO\App.Services\bin\Debug\App.IServices.pdb
+F:\Github\AppSoft2.0.IO\App.Site\bin\App.Services.dll
+F:\Github\AppSoft2.0.IO\App.Site\bin\App.Services.pdb
+F:\Github\AppSoft2.0.IO\App.Services\obj\Debug\App.Services.csprojResolveAssemblyReference.cache
+F:\Github\AppSoft2.0.IO\App.Services\obj\Debug\App.Services.dll
+F:\Github\AppSoft2.0.IO\App.Services\obj\Debug\App.Services.pdb

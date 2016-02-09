@@ -1,0 +1,7 @@
+F:\Github\AppSoft2.0.IO\App.IServices\bin\Debug\App.IServices.dll
+F:\Github\AppSoft2.0.IO\App.IServices\bin\Debug\App.IServices.pdb
+F:\Github\AppSoft2.0.IO\App.IServices\bin\Debug\App.Entity.dll
+F:\Github\AppSoft2.0.IO\App.IServices\bin\Debug\App.Entity.pdb
+F:\Github\AppSoft2.0.IO\App.IServices\obj\Debug\App.IServices.csprojResolveAssemblyReference.cache
+F:\Github\AppSoft2.0.IO\App.IServices\obj\Debug\App.IServices.dll
+F:\Github\AppSoft2.0.IO\App.IServices\obj\Debug\App.IServices.pdb
