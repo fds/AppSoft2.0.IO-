@@ -1,0 +1,4 @@
+F:\Github\AppSoft2.0.IO\App.Services\bin\Debug\App.Services.dll
+F:\Github\AppSoft2.0.IO\App.Services\bin\Debug\App.Services.pdb
+F:\Github\AppSoft2.0.IO\App.Services\obj\Debug\App.Services.dll
+F:\Github\AppSoft2.0.IO\App.Services\obj\Debug\App.Services.pdb

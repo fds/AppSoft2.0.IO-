@@ -1,0 +1,4 @@
+F:\Github\AppSoft2.0.IO\App.Document\bin\Debug\App.Document.dll
+F:\Github\AppSoft2.0.IO\App.Document\bin\Debug\App.Document.pdb
+F:\Github\AppSoft2.0.IO\App.Document\obj\Debug\App.Document.dll
+F:\Github\AppSoft2.0.IO\App.Document\obj\Debug\App.Document.pdb

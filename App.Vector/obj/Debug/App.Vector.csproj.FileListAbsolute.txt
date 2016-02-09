@@ -1,0 +1,4 @@
+F:\Github\AppSoft2.0.IO\App.Vector\bin\Debug\App.Vector.dll
+F:\Github\AppSoft2.0.IO\App.Vector\bin\Debug\App.Vector.pdb
+F:\Github\AppSoft2.0.IO\App.Vector\obj\Debug\App.Vector.dll
+F:\Github\AppSoft2.0.IO\App.Vector\obj\Debug\App.Vector.pdb
