@@ -293,6 +293,17 @@ namespace App.IRepository
         List<TResult> QueryBySql<TResult>(string sql, object whereObj = null);
         #endregion
 
+        #region 方法：事务执行sql语句或存储过程 + List<TResult> QueryBySqlTransactions<TResult>(string sql, object whereObj = null)
+        /// <summary>
+        /// 事务执行sql语句或存储过程
+        /// </summary>
+        /// <typeparam name="TResult"></typeparam>
+        /// <param name="sql">sql语句</param>
+        /// <param name="whereObj">命令参数对应匿名对象</param>
+        /// <returns></returns>
+        List<TResult> QueryBySqlTransactions<TResult>(string sql, object whereObj = null);
+        #endregion
+
         /*
          * 多表查询建议用视图或者存储过程，就不再封装，有必要时添加拓展方法
          */
