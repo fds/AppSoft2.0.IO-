@@ -41,19 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseServices.cs" />
-    <Compile Include="CreateServices.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CreateServices.tt</DependentUpon>
-    </Compile>
     <Compile Include="CustomServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CreateServices.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CreateServices.cs</LastGenOutput>
-    </Content>
+    <Compile Include="ReviewServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

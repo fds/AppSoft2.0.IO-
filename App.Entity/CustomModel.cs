@@ -1,16 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+/*!
+* 文件名称：CustomModel实体类
+* 文件作者：新生帝
+* 编写日期：2016-02-10 19:56:01
+* 版权所有：中山赢友网络科技有限公司
+* 企业官网：http://www.winu.net
+* 开源协议：GPL v2 License
+* 文件描述：一切从简，只为了更懒！
+*/
 namespace App.Entity
 {
-    [Serializable]
-    public class CustomModel
-    {
-        public int CustomID { get; set; }
+	[Serializable]
+	public partial class CustomModel
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		public int CustomID { get; set; }
 
-        public string CustomName { get; set; }
-    }
+		/// <summary>
+		/// 用户名称
+		/// </summary>
+		public string CustomName { get; set; }
+
+	}
 }

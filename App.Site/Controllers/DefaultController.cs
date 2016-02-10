@@ -10,19 +10,16 @@ namespace App.Site.Controllers
 {
     public class DefaultController : BaseController
     {
-        public DefaultController(ICustomServices __ICustomServices)
+        public DefaultController(ICustomServices _ICustomServices)
         {
-            base._ICustomServices = __ICustomServices;
+            base._ICustomServices = _ICustomServices;
         }
-        // GET: Default
         public ActionResult Index()
         {
-            CustomModel entity = new CustomModel()
+            _ICustomServices.Insert(new CustomModel
             {
                 CustomName = "新生帝"
-            };
-
-            _ICustomServices.Insert(entity);
+            });
 
             return View();
         }

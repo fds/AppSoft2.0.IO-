@@ -1,0 +1,488 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ assembly name="F:\Github\AppSoft2.0.IO\App.Vector\SqlSugar\SqlSugar.dll" #>
+<#@ assembly name="F:\Github\AppSoft2.0.IO\App.SqlSugarHelper\bin\Debug\App.SqlSugarHelper.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SqlSugar" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="App.SqlSugarHelper" #>
+
+<#+
+/*!
+ * 模板名称：数据库模板生成工具库
+ * 模板作者：新生帝
+ * 编写日期：2016年02月10日
+ * 版权所有：中山赢友网络科技有限公司
+ * 企业官网：http://www.winu.net
+ * 开源协议：GPL v2 License
+ * 插件描述：一切从简，只为了更懒！
+ */
+	#region 数据库字段类型和C#映射关系
+
+    public class SqlServerDbTypeMap
+    {
+        public static string MapCsharpType(string dbtype)
+        {
+            if (string.IsNullOrEmpty(dbtype)) return dbtype;
+            dbtype = dbtype.ToLower();
+            string csharpType = "object";
+            switch (dbtype)
+            {
+                case "bigint": csharpType = "long"; break;
+                case "binary": csharpType = "byte[]"; break;
+                case "bit": csharpType = "bool"; break;
+                case "char": csharpType = "string"; break;
+                case "date": csharpType = "DateTime"; break;
+                case "datetime": csharpType = "DateTime"; break;
+                case "datetime2": csharpType = "DateTime"; break;
+                case "datetimeoffset": csharpType = "DateTimeOffset"; break;
+                case "decimal": csharpType = "decimal"; break;
+                case "float": csharpType = "double"; break;
+                case "image": csharpType = "byte[]"; break;
+                case "int": csharpType = "int"; break;
+                case "money": csharpType = "decimal"; break;
+                case "nchar": csharpType = "string"; break;
+                case "ntext": csharpType = "string"; break;
+                case "numeric": csharpType = "decimal"; break;
+                case "nvarchar": csharpType = "string"; break;
+                case "real": csharpType = "Single"; break;
+                case "smalldatetime": csharpType = "DateTime"; break;
+                case "smallint": csharpType = "short"; break;
+                case "smallmoney": csharpType = "decimal"; break;
+                case "sql_variant": csharpType = "object"; break;
+                case "sysname": csharpType = "object"; break;
+                case "text": csharpType = "string"; break;
+                case "time": csharpType = "TimeSpan"; break;
+                case "timestamp": csharpType = "byte[]"; break;
+                case "tinyint": csharpType = "byte"; break;
+                case "uniqueidentifier": csharpType = "Guid"; break;
+                case "varbinary": csharpType = "byte[]"; break;
+                case "varchar": csharpType = "string"; break;
+                case "xml": csharpType = "string"; break;
+                default: csharpType = "object"; break;
+            }
+            return csharpType;
+        }
+           
+        public static Type MapCommonType(string dbtype)
+        {
+            if (string.IsNullOrEmpty(dbtype)) return Type.Missing.GetType();
+            dbtype = dbtype.ToLower();
+            Type commonType = typeof(object);
+            switch (dbtype)
+            {
+                case "bigint": commonType = typeof(long); break;
+                case "binary": commonType = typeof(byte[]); break;
+                case "bit": commonType = typeof(bool); break;
+                case "char": commonType = typeof(string); break;
+                case "date": commonType = typeof(DateTime); break;
+                case "datetime": commonType = typeof(DateTime); break;
+                case "datetime2": commonType = typeof(DateTime); break;
+                case "datetimeoffset": commonType = typeof(DateTimeOffset); break;
+                case "decimal": commonType = typeof(decimal); break;
+                case "float": commonType = typeof(double); break;
+                case "image": commonType = typeof(byte[]); break;
+                case "int": commonType = typeof(int); break;
+                case "money": commonType = typeof(decimal); break;
+                case "nchar": commonType = typeof(string); break;
+                case "ntext": commonType = typeof(string); break;
+                case "numeric": commonType = typeof(decimal); break;
+                case "nvarchar": commonType = typeof(string); break;
+                case "real": commonType = typeof(Single); break;
+                case "smalldatetime": commonType = typeof(DateTime); break;
+                case "smallint": commonType = typeof(short); break;
+                case "smallmoney": commonType = typeof(decimal); break;
+                case "sql_variant": commonType = typeof(object); break;
+                case "sysname": commonType = typeof(object); break;
+                case "text": commonType = typeof(string); break;
+                case "time": commonType = typeof(TimeSpan); break;
+                case "timestamp": commonType = typeof(byte[]); break;
+                case "tinyint": commonType = typeof(byte); break;
+                case "uniqueidentifier": commonType = typeof(Guid); break;
+                case "varbinary": commonType = typeof(byte[]); break;
+                case "varchar": commonType = typeof(string); break;
+                case "xml": commonType = typeof(string); break;
+                default: commonType = typeof(object); break;
+            }
+            return commonType;
+        }
+    }
+    #endregion
+
+	#region 表字段映射实体
+
+	public class DataTableMap
+	{
+		public object TABLE_NAME{get;set;}
+
+		public object TABLE_ID{get;set;}
+
+		public object COLUMN_NAME{get;set;}
+
+		public object DATA_TYPE{get;set;}
+
+		public object CHARACTER_MAXIMUM_LENGTH{get;set;}
+
+		public object COLUMN_DESCRIPTION{get;set;}
+
+		public object COLUMN_DEFAULT{get;set;}
+
+		public object IS_NULLABLE{get;set;}
+	}
+
+	#endregion
+#>
+<#+
+	// 执行Sql语句
+	public class MssqlHelper
+	{
+		public static List<T> RunSql<T>(string sql,object whereObj=null)
+		{
+				using (SqlSugarClient dbClient = new SqlSugarClient("Server=DESKTOP-ADRG1K6;Database=DotDot;Uid=sa;Password=000000;"))
+            {
+                return dbClient.SqlQuery<T>(sql,whereObj);
+            }
+        }
+
+		// 获取表结构信息
+		public static List<DataTableMap> GetTableColumns(string tableName)
+		{
+			string sql=@"SELECT  Sysobjects.name AS TABLE_NAME ,
+        syscolumns.Id  AS TABLE_ID,
+        syscolumns.name AS COLUMN_NAME ,
+        systypes.name AS DATA_TYPE ,
+        syscolumns.length AS CHARACTER_MAXIMUM_LENGTH ,
+        sys.extended_properties.[value] AS COLUMN_DESCRIPTION ,
+        syscomments.text AS COLUMN_DEFAULT ,
+        syscolumns.isnullable AS IS_NULLABLE
+FROM    syscolumns
+        INNER JOIN systypes ON syscolumns.xtype = systypes.xtype
+        LEFT JOIN sysobjects ON syscolumns.id = sysobjects.id
+        LEFT OUTER JOIN sys.extended_properties ON ( sys.extended_properties.minor_id = syscolumns.colid
+                                                     AND sys.extended_properties.major_id = syscolumns.id
+                                                   )
+        LEFT OUTER JOIN syscomments ON syscolumns.cdefault = syscomments.id
+WHERE   syscolumns.id IN ( SELECT   id
+                           FROM     SYSOBJECTS
+                           WHERE    xtype = 'U' )
+        AND ( systypes.name <> 'sysname' ) AND Sysobjects.name='"+tableName+"'  ORDER BY syscolumns.colid";
+
+			return RunSql<DataTableMap>(sql);
+		}
+
+		// 设置应用程序目录
+		public static string SetApplicationDirctory()
+		{
+			return @"F:\Github\AppSoft2.0.IO\";
+		}
+
+		// 判断目录是否存在
+		public static bool IsExistDirectory(string directoryPath)
+        {
+            return Directory.Exists(directoryPath);
+        }
+		
+		// 判断文件是否存在
+		 public static bool IsExistFile(string filePath)
+        {
+            return File.Exists(filePath);
+        }
+
+		// 写入文件
+		public static void CreateFile(string filePath, string text, Encoding encoding)
+        {
+            try
+            {
+                //如果文件不存在则创建该文件
+                if (IsExistFile(filePath))
+                {
+                   File.Delete(filePath);
+                }
+				 //创建文件
+                    FileInfo file = new FileInfo(filePath);
+                    using (FileStream stream = file.Create())
+                    {
+                        using (StreamWriter writer = new StreamWriter(stream, encoding))
+                        {
+                            writer.Write(text);
+                            writer.Flush();
+                        }
+                    }
+            }
+            catch
+            {
+            }
+        }
+
+		// 生成实体文件，会覆盖原文件
+		public static void CreateEntityFile(string tableName)
+		{
+			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
+			{
+				// 引用
+				string codeStr="using System;\r\n\r\n";
+
+				// 描述信息
+				codeStr+="/*!\r\n";
+				codeStr+="* 文件名称："+tableName+"实体类\r\n";
+				codeStr+="* 文件作者：新生帝\r\n";
+				codeStr+="* 编写日期："+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"\r\n";
+				codeStr+="* 版权所有：中山赢友网络科技有限公司\r\n";
+				codeStr+="* 企业官网：http://www.winu.net\r\n";
+				codeStr+="* 开源协议：GPL v2 License\r\n";
+				codeStr+="* 文件描述：一切从简，只为了更懒！\r\n";
+				codeStr+="*/\r\n";
+				
+				// 命名空间声明
+				codeStr+="namespace App.Entity\r\n";
+				codeStr+="{\r\n";
+
+				// 序列化
+				codeStr+="\t[Serializable]\r\n";
+
+				// 生成类声明
+				codeStr+="\tpublic partial class "+tableName+"\r\n";
+				codeStr+="\t{\r\n";
+
+
+				// 生成字段
+				List<DataTableMap> tableColumns= GetTableColumns(tableName);
+				foreach (DataTableMap tableColumn in tableColumns)
+				{
+					// 生成字段描述
+					codeStr+="\t\t/// <summary>\r\n";
+					codeStr+="\t\t/// "+tableColumn.COLUMN_DESCRIPTION+"\r\n";
+					codeStr+="\t\t/// </summary>\r\n";
+
+					// 生成属性
+					codeStr+="\t\tpublic "+SqlServerDbTypeMap.MapCsharpType(tableColumn.DATA_TYPE.ToString())+" "+tableColumn.COLUMN_NAME.ToString()+" { get; set; }\r\n\r\n";
+				}
+
+				// 生成类声明结束符
+				codeStr+="\t}\r\n";
+				codeStr+="}";
+
+				// 保存文件
+				CreateFile(SetApplicationDirctory()+@"App.Entity\"+tableName+".cs",codeStr,Encoding.UTF8);
+            }
+        }
+
+		// 生成仓储接口文件，会覆盖原文件
+		public static void CreateIRepositoryFile(string tableName)
+		{
+			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
+			{
+					// 仓储名称
+					string repositoryName="I"+tableName.Replace("Model","")+"Repository";
+
+					// 引用
+					string codeStr="using System;\r\n";
+					codeStr+="using App.Entity;\r\n\r\n";
+
+					// 描述信息
+					codeStr+="/*!\r\n";
+					codeStr+="* 文件名称："+repositoryName+"仓储接口类\r\n";
+					codeStr+="* 文件作者：新生帝\r\n";
+					codeStr+="* 编写日期："+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"\r\n";
+					codeStr+="* 版权所有：中山赢友网络科技有限公司\r\n";
+					codeStr+="* 企业官网：http://www.winu.net\r\n";
+					codeStr+="* 开源协议：GPL v2 License\r\n";
+					codeStr+="* 文件描述：一切从简，只为了更懒！\r\n";
+					codeStr+="*/\r\n";
+				
+					// 命名空间声明
+					codeStr+="namespace App.IRepository\r\n";
+					codeStr+="{\r\n";
+
+					// 生成接口声明
+					codeStr+="\tpublic partial interface "+repositoryName+" : IBaseRepository<"+tableName+">\r\n";
+					codeStr+="\t{\r\n";
+
+					// 生成类声明结束符
+					codeStr+="\t}\r\n";
+					codeStr+="}";
+
+					// 保存文件
+					CreateFile(SetApplicationDirctory()+@"App.IRepository\"+repositoryName+".cs",codeStr,Encoding.UTF8);
+			}
+		 }
+
+		 // 生成仓储文件，会覆盖原文件
+		public static void CreateRepositoryFile(string tableName)
+		{
+			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
+			{
+					// 仓储名称
+					string repositoryName=tableName.Replace("Model","")+"Repository";
+
+					// 引用
+					string codeStr="using System;\r\n";
+					codeStr+="using App.Entity;\r\n\r\n";
+					codeStr+="using App.IRepository;\r\n";
+
+					// 描述信息
+					codeStr+="/*!\r\n";
+					codeStr+="* 文件名称："+repositoryName+"仓储类\r\n";
+					codeStr+="* 文件作者：新生帝\r\n";
+					codeStr+="* 编写日期："+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"\r\n";
+					codeStr+="* 版权所有：中山赢友网络科技有限公司\r\n";
+					codeStr+="* 企业官网：http://www.winu.net\r\n";
+					codeStr+="* 开源协议：GPL v2 License\r\n";
+					codeStr+="* 文件描述：一切从简，只为了更懒！\r\n";
+					codeStr+="*/\r\n";
+				
+					// 命名空间声明
+					codeStr+="namespace App.Repository\r\n";
+					codeStr+="{\r\n";
+
+					// 生成接口声明
+					codeStr+="\tpublic partial class "+repositoryName+" : BaseRepository<"+tableName+"> , I"+repositoryName+"\r\n";
+					codeStr+="\t{\r\n";
+
+					// 生成类声明结束符
+					codeStr+="\t}\r\n";
+					codeStr+="}";
+
+					// 保存文件
+					CreateFile(SetApplicationDirctory()+@"App.Repository\"+repositoryName+".cs",codeStr,Encoding.UTF8);
+			}
+		 }
+
+		 // 生成服务接口文件，会覆盖原文件
+		public static void CreateIServicesFile(string tableName)
+		{
+			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
+			{
+					// 服务名称
+					string servicesName="I"+tableName.Replace("Model","")+"Services";
+
+					// 引用
+					string codeStr="using System;\r\n";
+					codeStr+="using App.Entity;\r\n\r\n";
+
+					// 描述信息
+					codeStr+="/*!\r\n";
+					codeStr+="* 文件名称："+servicesName+"服务接口类\r\n";
+					codeStr+="* 文件作者：新生帝\r\n";
+					codeStr+="* 编写日期："+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"\r\n";
+					codeStr+="* 版权所有：中山赢友网络科技有限公司\r\n";
+					codeStr+="* 企业官网：http://www.winu.net\r\n";
+					codeStr+="* 开源协议：GPL v2 License\r\n";
+					codeStr+="* 文件描述：一切从简，只为了更懒！\r\n";
+					codeStr+="*/\r\n";
+				
+					// 命名空间声明
+					codeStr+="namespace App.IServices\r\n";
+					codeStr+="{\r\n";
+
+					// 生成接口声明
+					codeStr+="\tpublic partial interface "+servicesName+" : IBaseServices<"+tableName+">\r\n";
+					codeStr+="\t{\r\n";
+
+					// 生成类声明结束符
+					codeStr+="\t}\r\n";
+					codeStr+="}";
+
+					// 保存文件
+					CreateFile(SetApplicationDirctory()+@"App.IServices\"+servicesName+".cs",codeStr,Encoding.UTF8);
+			}
+		 }
+
+		  // 生成服务文件，会覆盖原文件
+		public static void CreateServicesFile(string tableName)
+		{
+			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
+			{
+					// 仓储名称
+					string servicesName=tableName.Replace("Model","")+"Services";
+
+					// 引用
+					string codeStr="using System;\r\n";
+					codeStr+="using App.Entity;\r\n\r\n";
+					codeStr+="using App.IServices;\r\n\r\n";
+					codeStr+="using App.IRepository;\r\n";
+
+					// 描述信息
+					codeStr+="/*!\r\n";
+					codeStr+="* 文件名称："+servicesName+"服务类\r\n";
+					codeStr+="* 文件作者：新生帝\r\n";
+					codeStr+="* 编写日期："+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"\r\n";
+					codeStr+="* 版权所有：中山赢友网络科技有限公司\r\n";
+					codeStr+="* 企业官网：http://www.winu.net\r\n";
+					codeStr+="* 开源协议：GPL v2 License\r\n";
+					codeStr+="* 文件描述：一切从简，只为了更懒！\r\n";
+					codeStr+="*/\r\n";
+				
+					// 命名空间声明
+					codeStr+="namespace App.Services\r\n";
+					codeStr+="{\r\n";
+
+					// 生成接口声明
+					codeStr+="\tpublic partial class "+servicesName+" : BaseServices<"+tableName+"> , I"+servicesName+"\r\n";
+					
+					codeStr+="\t{\r\n";
+					
+					// 声明接口仓储
+					codeStr+="\t\tI"+tableName.Replace("Model","")+"Repository _I"+tableName.Replace("Model","")+"Repository;\r\n";
+
+					// 构造函数注入
+					codeStr+="\t\tpublic "+servicesName+"(I"+tableName.Replace("Model","")+"Repository __I"+tableName.Replace("Model","")+"Repository)\r\n";
+					codeStr+="\t\t{\r\n";
+
+					codeStr+="\t\t\tthis._I"+tableName.Replace("Model","")+"Repository = __I"+tableName.Replace("Model","")+"Repository;\r\n";
+					codeStr+="\t\t\tbase._IBaseRepository = __I"+tableName.Replace("Model","")+"Repository;\r\n";
+
+					codeStr+="\t\t}\r\n";
+
+					// 生成类声明结束符
+					codeStr+="\t}\r\n";
+					codeStr+="}";
+
+					// 保存文件
+					CreateFile(SetApplicationDirctory()+@"App.Services\"+servicesName+".cs",codeStr,Encoding.UTF8);
+			}
+		 }
+
+		// 生成父控制器类
+		public static void CreateBaseController(List<string> tableNames)
+		{
+				// 引用
+			string codeStr="using System.Web.Mvc;\r\n";
+			codeStr+="using App.IServices;\r\n\r\n";
+
+			// 描述信息
+			codeStr+="/*!\r\n";
+			codeStr+="* 文件名称：BaseController父控制器类\r\n";
+			codeStr+="* 文件作者：新生帝\r\n";
+			codeStr+="* 编写日期："+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"\r\n";
+			codeStr+="* 版权所有：中山赢友网络科技有限公司\r\n";
+			codeStr+="* 企业官网：http://www.winu.net\r\n";
+			codeStr+="* 开源协议：GPL v2 License\r\n";
+			codeStr+="* 文件描述：一切从简，只为了更懒！\r\n";
+			codeStr+="*/\r\n";
+
+			// 命名空间声明
+			codeStr+="namespace App.Site\r\n";
+			codeStr+="{\r\n";
+
+			// 生成接口声明
+			codeStr+="\tpublic partial class BaseController : Controller\r\n";
+			
+			codeStr+="\t{\r\n";
+
+            foreach (string tableName in tableNames)
+            {
+				codeStr+="\t\tprotected I"+tableName.Replace("Model","")+"Services _I"+tableName.Replace("Model","")+"Services;\r\n";
+            }
+
+			// 生成类声明结束符
+			codeStr+="\t}\r\n";
+			codeStr+="}";
+
+			// 保存文件
+			CreateFile(SetApplicationDirctory()+@"App.Site\App_Code\BaseController.cs",codeStr,Encoding.UTF8);
+        }
+    }
+
+#>
