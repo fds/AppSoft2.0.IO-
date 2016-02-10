@@ -33,8 +33,9 @@ namespace App.RESTful_API.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public string Post([FromBody]string value)
         {
+            return value;
         }
 
         // PUT api/<controller>/5
