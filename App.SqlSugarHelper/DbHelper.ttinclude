@@ -134,15 +134,23 @@
 	#endregion
 #>
 <#+
-	// 执行Sql语句
+	
+	// 模板帮助库
 	public class MssqlHelper
 	{
+		// 执行Sql语句
 		public static List<T> RunSql<T>(string sql,object whereObj=null)
 		{
 				using (SqlSugarClient dbClient = new SqlSugarClient("Server=DESKTOP-ADRG1K6;Database=DotDot;Uid=sa;Password=000000;"))
             {
                 return dbClient.SqlQuery<T>(sql,whereObj);
             }
+        }
+
+		// 获取所有的表，包括视图
+		public static List<string> GetTables()
+		{
+			return RunSql<string>("select name from sysobjects where xtype in('U','V')");
         }
 
 		// 获取表结构信息
@@ -165,7 +173,7 @@ FROM    syscolumns
         LEFT OUTER JOIN syscomments ON syscolumns.cdefault = syscomments.id
 WHERE   syscolumns.id IN ( SELECT   id
                            FROM     SYSOBJECTS
-                           WHERE    xtype = 'U' )
+                           WHERE    xtype in( 'U','V') )
         AND ( systypes.name <> 'sysname' ) AND Sysobjects.name='"+tableName+"'  ORDER BY syscolumns.colid";
 
 			return RunSql<DataTableMap>(sql);

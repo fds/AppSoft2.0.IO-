@@ -49,7 +49,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateTierCode.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbHelper.cs">
+    <Compile Include="CreateTierCode1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateTierCode.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbHelper1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DbHelper.ttinclude</DependentUpon>
@@ -60,11 +65,11 @@
   <ItemGroup>
     <Content Include="CreateTierCode.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CreateTierCode.cs</LastGenOutput>
+      <LastGenOutput>CreateTierCode1.cs</LastGenOutput>
     </Content>
     <None Include="DbHelper.ttinclude">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DbHelper.cs</LastGenOutput>
+      <LastGenOutput>DbHelper1.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
