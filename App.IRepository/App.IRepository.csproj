@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="ICustomRepository.cs" />
-    <Compile Include="IReviewRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

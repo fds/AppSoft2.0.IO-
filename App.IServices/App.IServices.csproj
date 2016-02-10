@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="IBaseServices.cs" />
     <Compile Include="ICustomServices.cs" />
-    <Compile Include="IReviewServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
