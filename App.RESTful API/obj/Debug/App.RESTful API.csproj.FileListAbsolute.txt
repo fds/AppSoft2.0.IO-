@@ -20,7 +20,6 @@ F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.IServices.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Library.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.Configuration.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.dll
-F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.Integration.Mvc.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.Integration.WebApi.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.Agent.Intercept.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.DependencyCollector.dll
@@ -38,6 +37,9 @@ F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Entity.pdb
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Filter.pdb
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.IServices.pdb
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Library.pdb
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.xml
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.Configuration.xml
+F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Autofac.Integration.WebApi.xml
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.DependencyCollector.xml
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.ServerTelemetryChannel.xml
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\Microsoft.AI.Web.xml

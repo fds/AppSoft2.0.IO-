@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using App.IServices;
 using App.Entity;
+using App.IServices;
 
 namespace App.Site.Controllers
 {
@@ -14,11 +14,12 @@ namespace App.Site.Controllers
         {
             base._ICustomServices = _ICustomServices;
         }
+        // GET: Default
         public ActionResult Index()
         {
-            _ICustomServices.Insert(new CustomModel
+            _ICustomServices.Insert(new CustomModel()
             {
-                CustomName = "新生帝"
+                CustomName = "哈哈哈222"
             });
 
             return View();

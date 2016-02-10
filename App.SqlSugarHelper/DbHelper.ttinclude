@@ -491,6 +491,46 @@ WHERE   syscolumns.id IN ( SELECT   id
 			// 保存文件
 			CreateFile(SetApplicationDirctory()+@"App.Site\App_Code\BaseController.cs",codeStr,Encoding.UTF8);
         }
+
+		// 生成父API控制器类
+		public static void CreateBaseApiController(List<string> tableNames)
+		{
+				// 引用
+			string codeStr="using System.Web.Http;\r\n";
+			codeStr+="using App.IServices;\r\n\r\n";
+
+			// 描述信息
+			codeStr+="/*!\r\n";
+			codeStr+="* 文件名称：BaseApiController父API控制器类\r\n";
+			codeStr+="* 文件作者：新生帝\r\n";
+			codeStr+="* 编写日期："+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"\r\n";
+			codeStr+="* 版权所有：中山赢友网络科技有限公司\r\n";
+			codeStr+="* 企业官网：http://www.winu.net\r\n";
+			codeStr+="* 开源协议：GPL v2 License\r\n";
+			codeStr+="* 文件描述：一切从简，只为了更懒！\r\n";
+			codeStr+="*/\r\n";
+
+			// 命名空间声明
+			codeStr+="namespace App.RESTful_API\r\n";
+			codeStr+="{\r\n";
+
+			// 生成接口声明
+			codeStr+="\tpublic partial class BaseApiController : ApiController\r\n";
+			
+			codeStr+="\t{\r\n";
+
+            foreach (string tableName in tableNames)
+            {
+				codeStr+="\t\tprotected I"+tableName.Replace("Model","")+"Services _I"+tableName.Replace("Model","")+"Services;\r\n";
+            }
+
+			// 生成类声明结束符
+			codeStr+="\t}\r\n";
+			codeStr+="}";
+
+			// 保存文件
+			CreateFile(SetApplicationDirctory()+@"App.RESTful API\App_Code\BaseApiController.cs",codeStr,Encoding.UTF8);
+        }
     }
 
 #>
