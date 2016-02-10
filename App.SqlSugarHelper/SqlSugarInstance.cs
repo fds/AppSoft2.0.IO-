@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using SqlSugar;
 
 /*!
- * 插件名称：返回SqlSugarClient实体类
- * 插件作者：新生帝
+ * 文件名称：返回SqlSugarClient实体类
+ * 文件作者：新生帝
  * 编写日期：2016年02月09日
  * 版权所有：中山赢友网络科技有限公司
  * 企业官网：http://www.winu.net
  * 开源协议：GPL v2 License
- * 插件描述：一切从简，只为了更懒！
+ * 文件描述：一切从简，只为了更懒！
  */
 
 namespace App.SqlSugarHelper
