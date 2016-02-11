@@ -14,9 +14,7 @@
 
 ### AppSoft2.0 IO 系统架构组成：
 
-* 三层架构，抽象工厂，自动工厂，OOP，AOP
-
-
+* 抽象工厂，自动工厂
 * ASP.NET MVC 5/WebApi2.1
 * .NET Framework 4.6.1
 * Autofac 3.5.2
@@ -27,3 +25,4 @@
 * Lucence.NET
 * NPOI
 * SuperSocket
+* MSSQL 2005 + 
