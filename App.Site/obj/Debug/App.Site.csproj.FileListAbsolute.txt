@@ -1,9 +1,9 @@
-F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\csc.exe
 F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\Microsoft.CodeAnalysis.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\System.Reflection.Metadata.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\VBCSCompiler.exe
 F:\Github\AppSoft2.0.IO\App.Site\bin\ApplicationInsights.config
+F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\csc.exe
 F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\roslyn\Microsoft.CSharp.Core.targets
