@@ -69,6 +69,8 @@
 * 3.0 在控制器中引入`using App.Entity;`和`using App.IServices;`命名空间。
 
 * 4.0 编写控制器有参构造方法，将需要操作的服务接口声明为构造函数的形参，如：
+
+
 ```
 // ApiDefaultController为上面新增控制器的名称，可以同时注入多个服务接口
 
@@ -76,9 +78,12 @@ public ApiDefaultController(IUserServices _IUserServices)
 {
     base._IUserServices = _IUserServices;
 }
+
 ```
 
-* 5.0 可以调用接口对应的方法完成基本的CURD（增删改查）操作，甚至更复杂的操作，如
+* 5.0 可以调用接口对应的方法完成基本的CURD（增删改查）操作，甚至更复杂的操作，如：
+
+
 ```
 // 新增操作
 
@@ -97,4 +102,5 @@ _IUserServices.Insert(new UserEntity(){
 // 查询操作
 
 ...
+
 ```
