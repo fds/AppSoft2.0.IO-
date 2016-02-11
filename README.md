@@ -25,7 +25,7 @@
 
 ### AppSoft2.0 IO 系统设计及使用框架（持续更新）：
 
-* 三层架构，抽象工厂，自动工厂，OOP，AOP
+* N层架构（抽象工厂，自动工厂，OOP，AOP）
 * **ASP.NET MVC 5/Web API2.1**
 * **.NET Framework 4.6.1**
 * Autofac 3.5.2
