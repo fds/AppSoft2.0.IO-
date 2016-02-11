@@ -86,7 +86,7 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-* 下载[http://git.oschina.net/winu.net/AppSoft2.0.IO/](AppSoft2.0.IO)
+* 下载 [AppSoft2.0.IO]([http://git.oschina.net/winu.net/AppSoft2.0.IO/](AppSoft2.0.IO))
 
 *****
 
