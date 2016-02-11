@@ -71,7 +71,7 @@
 * 4.0 编写控制器有参构造方法，将需要操作的服务接口声明为构造函数的形参，如：
 
 
-```
+```C#
 // ApiDefaultController为上面新增控制器的名称，可以同时注入多个服务接口
 
 public ApiDefaultController(IUserServices _IUserServices)
@@ -84,7 +84,7 @@ public ApiDefaultController(IUserServices _IUserServices)
 * 5.0 可以调用接口对应的方法完成基本的CURD（增删改查）操作，甚至更复杂的操作，如：
 
 
-```
+```C#
 // 新增操作
 
 _IUserServices.Insert(new UserEntity(){
