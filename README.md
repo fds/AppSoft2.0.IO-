@@ -86,39 +86,39 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-* 1.0 下载[http://git.oschina.net/winu.net/AppSoft2.0.IO/](AppSoft2.0.IO)
+* 下载[http://git.oschina.net/winu.net/AppSoft2.0.IO/](AppSoft2.0.IO)
 
 *****
 
-* 2.0 AppSoft2.0.IO是使用Visual Studio 2015编写的，意在开发适应未来的系统框架，支持Visual Studio 2012以上（包括）软件打开。
+* AppSoft2.0.IO是使用Visual Studio 2015编写的，意在开发适应未来的系统框架，支持Visual Studio 2012以上（包括）软件打开。
 
 *****
 
-* 3.0 打开解决方案后，设置`App.RESTful API`（Web API）或`App.Site`（MVC + WebAPI）为项目启动项
+* 打开解决方案后，设置`App.RESTful API`（Web API）或`App.Site`（MVC + WebAPI）为项目启动项
 
 *****
 
-* 4.0 设置2.0设置的启动项目的`Web.config`文件的`connectionStrings`节点的数据库链接字符串。
+* 设置2.0设置的启动项目的`Web.config`文件的`connectionStrings`节点的数据库链接字符串。
 
 *****
 
-* 5.0 打开解决方案中`App.ORM`中`T4GenerateClient.tt`T4模板文件，设置`solutionDir`为你项目的绝对物理路径，以及`MssqlHelper.connStr`为数据库链接字符串
+* 打开解决方案中`App.ORM`中`T4GenerateClient.tt`T4模板文件，设置`solutionDir`为你项目的绝对物理路径，以及`MssqlHelper.connStr`为数据库链接字符串
 
 *****
 
-* 6.0 使用快捷键`Ctrl+S`或者点击工具栏`保存`按钮，保存`T4GenerateClient.tt`，T4模板文件会自动生成所有层的代码。
+* 使用快捷键`Ctrl+S`或者点击工具栏`保存`按钮，保存`T4GenerateClient.tt`，T4模板文件会自动生成所有层的代码。
 
 *****
 
-* 7.0 生成成功之后编辑器会提示`项目已被修改，是否重新加载`提示框，点击`全部重新加载`按钮即可。
+* 生成成功之后编辑器会提示`项目已被修改，是否重新加载`提示框，点击`全部重新加载`按钮即可。
 
 *****
 
-* 8.0 右键`App.Repository`和`App.Services`项目，选择`属性`，点击左边的菜单`生成`，并设置`输出路径`为`..\App.RESTful API\bin\`或者`..\App.Site\bin\`，这里取决于你设置哪个项目为启动项（`App.RESTful API`或`App.Site`），这里主要是为了`Autofac`依赖注入和控制反转作用的。
+* 右键`App.Repository`和`App.Services`项目，选择`属性`，点击左边的菜单`生成`，并设置`输出路径`为`..\App.RESTful API\bin\`或者`..\App.Site\bin\`，这里取决于你设置哪个项目为启动项（`App.RESTful API`或`App.Site`），这里主要是为了`Autofac`依赖注入和控制反转作用的。
 
 *****
 
-* 9.0 加载完毕之后，点击`解决方案文件`，右键`重新生成解决方案`按钮，项目生成成功之后，整个项目初始化也就完成了！
+* 加载完毕之后，点击`解决方案文件`，右键`重新生成解决方案`按钮，项目生成成功之后，整个项目初始化也就完成了！
 
 *****
 
@@ -126,19 +126,19 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-* 1.0 在`App.RESTful API`或者`App.Site`项目`Controllers`文件夹下创建对应控制器（补充：`App.RESTful API`项目创建`Web API控制器`,`App.Site`项目创建`MVC控制器`）。
+* 在`App.RESTful API`或者`App.Site`项目`Controllers`文件夹下创建对应控制器（补充：`App.RESTful API`项目创建`Web API控制器`,`App.Site`项目创建`MVC控制器`）。
 
 *****
 
-* 2.0 将新增的控制器继承`父控制器`（补充：`App.RESTful API`项目下的`Web API控制器`继承`BaseApiController`,`App.Site`项目下的`MVC控制器`继承`BaseController`）
+* 将新增的控制器继承`父控制器`（补充：`App.RESTful API`项目下的`Web API控制器`继承`BaseApiController`,`App.Site`项目下的`MVC控制器`继承`BaseController`）
 
 *****
 
-* 3.0 在控制器中引入`using App.Entity;`和`using App.IServices;`命名空间。
+* 在控制器中引入`using App.Entity;`和`using App.IServices;`命名空间。
 
 *****
 
-* 4.0 编写控制器有参构造方法，将需要操作的服务接口声明为构造函数的形参，如：
+* 编写控制器有参构造方法，将需要操作的服务接口声明为构造函数的形参，如：
 
 
 ```C#
@@ -153,7 +153,7 @@ public ApiDefaultController(IUserServices _IUserServices)
 
 *****
 
-* 5.0 可以调用接口对应的方法完成基本的CURD（增删改查）操作，甚至更复杂的操作，如：
+* 可以调用接口对应的方法完成基本的CURD（增删改查）操作，甚至更复杂的操作，如：
 
 
 ```C#
