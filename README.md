@@ -29,3 +29,9 @@
 * Senparc.Weixin.MP
 * AutoMapping
 * MSSQL 2005 + 
+
+*****
+
+### AppSoft2.0.IO 系统架构图：
+
+![输入图片说明](http://git.oschina.net/uploads/images/2016/0212/023235_1173f9d3_526496.jpeg "在这里输入图片标题")
