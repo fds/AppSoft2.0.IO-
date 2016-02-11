@@ -1,10 +1,15 @@
 ﻿<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="System.Data" #>
 <#@ assembly name="$(SolutionDir)\App.Vector\SqlSugar\SqlSugar.dll" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="SqlSugar" #>
 <#@ import namespace="System.IO" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
 
 <#+
 /*!
@@ -191,6 +196,27 @@
             return File.Exists(filePath);
         }
 
+		// 包含到项目文件中
+		public static void ContainFileToCsproj(string fileName, string solutionDir,string csprojName)
+        {
+			string path=solutionDir+csprojName+@"\"+csprojName+".csproj";
+
+            XDocument doc = XDocument.Load(path);
+            XElement root = doc.Root;
+            string xmlns = "{" + root.Attribute("xmlns").Value + "}";
+            IEnumerable<XElement> compileList = root.Elements(xmlns + "ItemGroup").Elements(xmlns + "Compile");
+            XElement itemGroup = compileList.FirstOrDefault().Parent;
+            if (compileList.Where(u => u.Attribute("Include").Value == fileName).Count() > 0)
+            {
+               compileList.Where(u => u.Attribute("Include").Value == fileName).Remove();
+            }
+            
+			XElement compile = new XElement(xmlns + "Compile");
+            compile.SetAttributeValue("Include", fileName);
+            itemGroup.AddFirst(compile);
+            doc.Save(path);
+        }
+
 		// 写入文件
 		public static void CreateFile(string filePath, string text, Encoding encoding)
         {
@@ -267,6 +293,9 @@
 
 				// 保存文件
 				CreateFile(solutionDir+@"App.Entity\"+tableName+".cs",codeStr,Encoding.UTF8);
+
+				// 包含项目
+				ContainFileToCsproj(tableName+".cs",solutionDir,"App.Entity");
             }
         }
 
@@ -307,6 +336,9 @@
 
 					// 保存文件
 					CreateFile(solutionDir+@"App.IRepository\"+repositoryName+".cs",codeStr,Encoding.UTF8);
+
+					// 包含项目
+					ContainFileToCsproj(repositoryName+".cs",solutionDir,"App.IRepository");
 			}
 		 }
 
@@ -348,6 +380,9 @@
 
 					// 保存文件
 					CreateFile(solutionDir+@"App.Repository\"+repositoryName+".cs",codeStr,Encoding.UTF8);
+
+					// 包含项目
+					ContainFileToCsproj(repositoryName+".cs",solutionDir,"App.Repository");
 			}
 		 }
 
@@ -388,6 +423,9 @@
 
 					// 保存文件
 					CreateFile(solutionDir+@"App.IServices\"+servicesName+".cs",codeStr,Encoding.UTF8);
+
+					// 包含项目
+					ContainFileToCsproj(servicesName+".cs",solutionDir,"App.IServices");
 			}
 		 }
 
@@ -443,6 +481,9 @@
 
 					// 保存文件
 					CreateFile(solutionDir+@"App.Services\"+servicesName+".cs",codeStr,Encoding.UTF8);
+
+					// 包含项目
+					ContainFileToCsproj(servicesName+".cs",solutionDir,"App.Services");
 			}
 		 }
 
@@ -484,6 +525,9 @@
 
 			// 保存文件
 			CreateFile(solutionDir+@"App.Site\App_Code\BaseController.cs",codeStr,Encoding.UTF8);
+
+			// 包含项目
+			ContainFileToCsproj(@"App_Code\BaseController"+".cs",solutionDir,"App.Site");
         }
 
 		// 生成父API控制器类
@@ -524,6 +568,9 @@
 
 			// 保存文件
 			CreateFile(solutionDir+@"App.RESTful API\App_Code\BaseApiController.cs",codeStr,Encoding.UTF8);
+
+			// 包含项目
+			ContainFileToCsproj(@"App_Code\BaseApiController"+".cs",solutionDir,"App.RESTful API");
         }
     }
 
