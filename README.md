@@ -39,6 +39,29 @@
 
 *****
 
+### AppSoft2.0.IO 目录结构（待完善）
+
+```
+AppSoft2.0.IO  解决方案目录
+├─App.Document    项目说明文档，数据库初始化文件等等
+├─App.Entity    数据表对应实体模型
+├─App.Filter    MVC或Web API过滤器
+├─App.IRepository    数据表对应仓储接口
+├─App.IServices    数据表对应服务接口
+├─App.Library    公共类库
+├─App.ORM    ORM框架，如EF，SqlSugar
+├─App.Repository    数据表对应仓储实例类
+├─App.RESTful API    RESTful API接口项目
+├─App.Services    数据表对应服务实例类
+├─App.Site    网站项目
+├─App.Vector    第三方提供DLL或者操作帮助类
+├─App.WeiXin API	微信平台开发API接口
+├─README.md	README文件
+├─LICENSE.txt	授权说明文件
+
+```
+
+*****
 
 ### AppSoft2.0.IO 系统初始化步骤：
 
