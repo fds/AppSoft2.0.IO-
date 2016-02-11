@@ -350,8 +350,8 @@ public class MssqlHelper
 
             // 引用
             string codeStr = "using System;\r\n";
-            codeStr += "using App.Entity;\r\n\r\n";
-            codeStr += "using App.IRepository;\r\n";
+            codeStr += "using App.Entity;\r\n";
+            codeStr += "using App.IRepository;\r\n\r\n";
 
             // 描述信息
             codeStr += "/*!\r\n";
@@ -437,9 +437,9 @@ public class MssqlHelper
 
             // 引用
             string codeStr = "using System;\r\n";
-            codeStr += "using App.Entity;\r\n\r\n";
-            codeStr += "using App.IServices;\r\n\r\n";
-            codeStr += "using App.IRepository;\r\n";
+            codeStr += "using App.Entity;\r\n";
+            codeStr += "using App.IServices;\r\n";
+            codeStr += "using App.IRepository;\r\n\r\n";
 
             // 描述信息
             codeStr += "/*!\r\n";
