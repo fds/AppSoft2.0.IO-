@@ -14,7 +14,7 @@
 
 *****
 
-### AppSoft2.0 IO 系统架构组成及思想：
+### AppSoft2.0 IO 系统设计及使用框架：
 
 * 三层架构，抽象工厂，自动工厂，OOP，AOP
 * **ASP.NET MVC 5/Web API2.1**
