@@ -25,4 +25,5 @@
 * Lucence.NET
 * NPOI
 * SuperSocket
+* Senparc.Weixin.MP
 * MSSQL 2005 + 
