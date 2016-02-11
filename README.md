@@ -141,3 +141,17 @@ _IUserServices.Insert(new UserEntity(){
 * ...
 * ...
 * ...
+
+*****
+
+### AppSoft2.0.IO 友情捐赠
+
+* 如果你觉得 点点例 对你有价值，并且愿意让她继续成长下去，你可以资助这个项目的开发。
+
+![友情捐赠AppSoft2.0.IO](http://git.oschina.net/uploads/images/2016/0207/160936_8f2d5f2e_526496.png "友情捐赠AppSoft2.0.IO")
+
+*****
+
+如果你喜欢AppSoft2.0.IO，可以点击右上角的`star`，想实时关注进度，可以点击右上角的`watch`。
+
+最后，感谢每一个提建议和使用或者捐赠的朋友！因为你们，我们才能坚持！也是因为你们，未来才会更美好！
