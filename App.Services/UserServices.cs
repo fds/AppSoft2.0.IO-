@@ -7,7 +7,7 @@ using App.IRepository;
 /*!
 * 文件名称：UserServices服务类
 * 文件作者：新生帝
-* 编写日期：2016-02-11 15:29:17
+* 编写日期：2016-02-11 15:35:32
 * 版权所有：中山赢友网络科技有限公司
 * 企业官网：http://www.winu.net
 * 开源协议：GPL v2 License

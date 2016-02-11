@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateTierCode.cs">
+    <Compile Include="T4GenerateClient.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateTierCode.tt</DependentUpon>
+      <DependentUpon>T4GenerateClient.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlSugarInstance.cs" />
@@ -56,12 +56,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DbHelper.ttinclude" />
+    <None Include="T4GenerateCore.ttinclude" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CreateTierCode.tt">
+    <Content Include="T4GenerateClient.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CreateTierCode.cs</LastGenOutput>
+      <LastGenOutput>T4GenerateClient.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
