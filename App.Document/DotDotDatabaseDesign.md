@@ -8,7 +8,7 @@
 
  *****
 
- > ### UserModel 用户表
+ > ### UserEntity 用户表
 
  * `UserID`：用户ID，Int，主键，自增，NOT NULL
  * `UserName`：用户昵称，NVarchar(64)，NOT NULL
@@ -16,9 +16,9 @@
  * `UserPhone`：移动手机，Varchar(16)，NOT NULL
  * `UserEmail`：电子邮箱，Varchar(255)，NOT NULL
  * `UserPicture`：用户头像，Varchar(50)，NOT NULL
- * `Birthday`：出生日期，SmallDateTime，NULL
- * `Address`：用户地址，NVarchar(512)，NULL，
- * `Gender`：用户性别，Varchar(4)，NOT NULL，男/女
+ * `Birthday`：出生日期，SmallDateTime，NULL，1990-01-01
+ * `Address`：用户住址，NVarchar(512)，NULL，
+ * `Gender`：用户性别，Varchar(8)，NOT NULL，男/女
  * `Occupation`：身份职业，Varchar(16)，NOT NULL，程序猿/设计师/攻城狮
  * `Describe`：个人描述，NVarchar(255)，NULL，这家伙很懒，什么都没留下...
  * `QQ`：QQ号码，Varchar(16)，NULL
@@ -33,6 +33,8 @@
  * `DeviceId`：设备唯一ID，Varchar(128)，NOT NULL
  * `DeviceToken`：IOS设备推送Token，Varchar(128)，NULL
  * `LoginCount`：登录次数，Int，NOT NULL，0
- * `RongCloudToken`：即时通讯融云Token，NVarchar(255)，NOT NULL
- * `UserGUID`：唯一标识，Varchar(50)，NOT NULL
+ * `RongCloudToken`：即时通讯融云Token，Varchar(255)，NOT NULL
+ * `UserGUID`：用户唯一标识，Varchar(50)，NOT NULL
+ * `Status`：用户状态，Int，NOT NULL，10000（正常）/10001（QQ未绑定）/10002（微博未绑定）/10003（微信未绑定）/10004（用户已禁用）/10005（用户已被软删除）
+ * `StatusChangeReason`：用户状态改变原因，NVarchar(255)，NULL，无
 

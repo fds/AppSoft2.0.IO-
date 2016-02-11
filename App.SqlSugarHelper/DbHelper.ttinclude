@@ -282,7 +282,7 @@ WHERE   syscolumns.id IN ( SELECT   id
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
 					// 仓储名称
-					string repositoryName="I"+tableName.Replace("Model","")+"Repository";
+					string repositoryName="I"+tableName.Replace("Entity","")+"Repository";
 
 					// 引用
 					string codeStr="using System;\r\n";
@@ -322,7 +322,7 @@ WHERE   syscolumns.id IN ( SELECT   id
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
 					// 仓储名称
-					string repositoryName=tableName.Replace("Model","")+"Repository";
+					string repositoryName=tableName.Replace("Entity","")+"Repository";
 
 					// 引用
 					string codeStr="using System;\r\n";
@@ -363,7 +363,7 @@ WHERE   syscolumns.id IN ( SELECT   id
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
 					// 服务名称
-					string servicesName="I"+tableName.Replace("Model","")+"Services";
+					string servicesName="I"+tableName.Replace("Entity","")+"Services";
 
 					// 引用
 					string codeStr="using System;\r\n";
@@ -403,7 +403,7 @@ WHERE   syscolumns.id IN ( SELECT   id
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
 					// 仓储名称
-					string servicesName=tableName.Replace("Model","")+"Services";
+					string servicesName=tableName.Replace("Entity","")+"Services";
 
 					// 引用
 					string codeStr="using System;\r\n";
@@ -432,14 +432,14 @@ WHERE   syscolumns.id IN ( SELECT   id
 					codeStr+="\t{\r\n";
 					
 					// 声明接口仓储
-					codeStr+="\t\tI"+tableName.Replace("Model","")+"Repository _I"+tableName.Replace("Model","")+"Repository;\r\n";
+					codeStr+="\t\tI"+tableName.Replace("Entity","")+"Repository _I"+tableName.Replace("Entity","")+"Repository;\r\n";
 
 					// 构造函数注入
-					codeStr+="\t\tpublic "+servicesName+"(I"+tableName.Replace("Model","")+"Repository __I"+tableName.Replace("Model","")+"Repository)\r\n";
+					codeStr+="\t\tpublic "+servicesName+"(I"+tableName.Replace("Entity","")+"Repository __I"+tableName.Replace("Entity","")+"Repository)\r\n";
 					codeStr+="\t\t{\r\n";
 
-					codeStr+="\t\t\tthis._I"+tableName.Replace("Model","")+"Repository = __I"+tableName.Replace("Model","")+"Repository;\r\n";
-					codeStr+="\t\t\tbase._IBaseRepository = __I"+tableName.Replace("Model","")+"Repository;\r\n";
+					codeStr+="\t\t\tthis._I"+tableName.Replace("Entity","")+"Repository = __I"+tableName.Replace("Entity","")+"Repository;\r\n";
+					codeStr+="\t\t\tbase._IBaseRepository = __I"+tableName.Replace("Entity","")+"Repository;\r\n";
 
 					codeStr+="\t\t}\r\n";
 
@@ -481,7 +481,7 @@ WHERE   syscolumns.id IN ( SELECT   id
 
             foreach (string tableName in tableNames)
             {
-				codeStr+="\t\tprotected I"+tableName.Replace("Model","")+"Services _I"+tableName.Replace("Model","")+"Services;\r\n";
+				codeStr+="\t\tprotected I"+tableName.Replace("Entity","")+"Services _I"+tableName.Replace("Entity","")+"Services;\r\n";
             }
 
 			// 生成类声明结束符
@@ -521,7 +521,7 @@ WHERE   syscolumns.id IN ( SELECT   id
 
             foreach (string tableName in tableNames)
             {
-				codeStr+="\t\tprotected I"+tableName.Replace("Model","")+"Services _I"+tableName.Replace("Model","")+"Services;\r\n";
+				codeStr+="\t\tprotected I"+tableName.Replace("Entity","")+"Services _I"+tableName.Replace("Entity","")+"Services;\r\n";
             }
 
 			// 生成类声明结束符
