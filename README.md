@@ -1,6 +1,6 @@
 ### AppSoft2.0.IO不仅仅一个系统，更是你IT生涯的伴侣，AppSoft2.0.IO可以让你编程效率事半功倍！
 
-> AppSoft2.0.IO 摒弃了Entity Framework，采用SqlSugar ORM框架，性能明显提升许多
+> AppSoft2.0.IO 摒弃了Entity Framework，采用SqlSugar ORM框架，SqlSugar是最接近ADO.NET的ORM框架！
 
 * 系统名称：AppSoft2.0.IO .NET通用开发系统
 * 系统作者：新生帝
@@ -127,3 +127,17 @@ _IUserServices.Insert(new UserEntity(){
 ...
 
 ```
+
+*****
+
+### AppSoft2.0.IO 应用场景：
+
+* Web软件系统开发
+* 企业/门户网站开发
+* 管理系统开发
+* 电商平台开发
+* 微信平台开发
+* 论坛社区开发
+* ...
+* ...
+* ...
