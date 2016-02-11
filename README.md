@@ -44,7 +44,7 @@
 * SuperSocket
 * Senparc.Weixin.MP
 * AutoMapper
-* MSSQL 2005 + 
+* SQL Server 2005 + 
 
 *****
 
