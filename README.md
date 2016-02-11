@@ -3,7 +3,7 @@
 > AppSoft2.0.IO 摒弃了Entity Framework，采用SqlSugar ORM框架，性能明显提升许多
 
  * 系统名称：AppSoft2.0.IO .NET通用开发系统
- * 系统作者：新生帝
+ * 系统作者：新生帝，QQ：8020292
  * 编写日期：2016年02月09日
  * 版权所有：中山赢友网络科技有限公司
  * 企业官网：http://www.winu.net
