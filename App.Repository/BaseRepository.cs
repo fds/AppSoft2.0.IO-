@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SqlSugar;
 using System.Linq.Expressions;
-using App.SqlSugarHelper;
+using App.ORM;
 using App.IRepository;
 
 /*!

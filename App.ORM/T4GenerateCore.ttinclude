@@ -1,12 +1,10 @@
 ﻿<#@ assembly name="System.Core" #>
-<#@ assembly name="F:\Github\AppSoft2.0.IO\App.Vector\SqlSugar\SqlSugar.dll" #>
-<#@ assembly name="F:\Github\AppSoft2.0.IO\App.SqlSugarHelper\bin\Debug\App.SqlSugarHelper.dll" #>
+<#@ assembly name="$(SolutionDir)\App.Vector\SqlSugar\SqlSugar.dll" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="SqlSugar" #>
 <#@ import namespace="System.IO" #>
-<#@ import namespace="App.SqlSugarHelper" #>
 
 <#+
 /*!
@@ -179,12 +177,6 @@ WHERE   syscolumns.id IN ( SELECT   id
 			return RunSql<DataTableMap>(sql);
 		}
 
-		// 设置应用程序目录
-		public static string SetApplicationDirctory()
-		{
-			return @"F:\Github\AppSoft2.0.IO\";
-		}
-
 		// 判断目录是否存在
 		public static bool IsExistDirectory(string directoryPath)
         {
@@ -224,7 +216,7 @@ WHERE   syscolumns.id IN ( SELECT   id
         }
 
 		// 生成实体文件，会覆盖原文件
-		public static void CreateEntityFile(string tableName)
+		public static void CreateEntityFile(string tableName,string solutionDir)
 		{
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
@@ -272,12 +264,12 @@ WHERE   syscolumns.id IN ( SELECT   id
 				codeStr+="}";
 
 				// 保存文件
-				CreateFile(SetApplicationDirctory()+@"App.Entity\"+tableName+".cs",codeStr,Encoding.UTF8);
+				CreateFile(solutionDir+@"App.Entity\"+tableName+".cs",codeStr,Encoding.UTF8);
             }
         }
 
 		// 生成仓储接口文件，会覆盖原文件
-		public static void CreateIRepositoryFile(string tableName)
+		public static void CreateIRepositoryFile(string tableName,string solutionDir)
 		{
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
@@ -312,12 +304,12 @@ WHERE   syscolumns.id IN ( SELECT   id
 					codeStr+="}";
 
 					// 保存文件
-					CreateFile(SetApplicationDirctory()+@"App.IRepository\"+repositoryName+".cs",codeStr,Encoding.UTF8);
+					CreateFile(solutionDir+@"App.IRepository\"+repositoryName+".cs",codeStr,Encoding.UTF8);
 			}
 		 }
 
 		 // 生成仓储文件，会覆盖原文件
-		public static void CreateRepositoryFile(string tableName)
+		public static void CreateRepositoryFile(string tableName,string solutionDir)
 		{
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
@@ -353,12 +345,12 @@ WHERE   syscolumns.id IN ( SELECT   id
 					codeStr+="}";
 
 					// 保存文件
-					CreateFile(SetApplicationDirctory()+@"App.Repository\"+repositoryName+".cs",codeStr,Encoding.UTF8);
+					CreateFile(solutionDir+@"App.Repository\"+repositoryName+".cs",codeStr,Encoding.UTF8);
 			}
 		 }
 
 		 // 生成服务接口文件，会覆盖原文件
-		public static void CreateIServicesFile(string tableName)
+		public static void CreateIServicesFile(string tableName,string solutionDir)
 		{
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
@@ -393,12 +385,12 @@ WHERE   syscolumns.id IN ( SELECT   id
 					codeStr+="}";
 
 					// 保存文件
-					CreateFile(SetApplicationDirctory()+@"App.IServices\"+servicesName+".cs",codeStr,Encoding.UTF8);
+					CreateFile(solutionDir+@"App.IServices\"+servicesName+".cs",codeStr,Encoding.UTF8);
 			}
 		 }
 
 		  // 生成服务文件，会覆盖原文件
-		public static void CreateServicesFile(string tableName)
+		public static void CreateServicesFile(string tableName,string solutionDir)
 		{
 			if(!string.IsNullOrEmpty(tableName)&&!string.IsNullOrWhiteSpace(tableName))
 			{
@@ -448,12 +440,12 @@ WHERE   syscolumns.id IN ( SELECT   id
 					codeStr+="}";
 
 					// 保存文件
-					CreateFile(SetApplicationDirctory()+@"App.Services\"+servicesName+".cs",codeStr,Encoding.UTF8);
+					CreateFile(solutionDir+@"App.Services\"+servicesName+".cs",codeStr,Encoding.UTF8);
 			}
 		 }
 
 		// 生成父控制器类
-		public static void CreateBaseController(List<string> tableNames)
+		public static void CreateBaseController(List<string> tableNames,string solutionDir)
 		{
 				// 引用
 			string codeStr="using System.Web.Mvc;\r\n";
@@ -489,11 +481,11 @@ WHERE   syscolumns.id IN ( SELECT   id
 			codeStr+="}";
 
 			// 保存文件
-			CreateFile(SetApplicationDirctory()+@"App.Site\App_Code\BaseController.cs",codeStr,Encoding.UTF8);
+			CreateFile(solutionDir+@"App.Site\App_Code\BaseController.cs",codeStr,Encoding.UTF8);
         }
 
 		// 生成父API控制器类
-		public static void CreateBaseApiController(List<string> tableNames)
+		public static void CreateBaseApiController(List<string> tableNames,string solutionDir)
 		{
 				// 引用
 			string codeStr="using System.Web.Http;\r\n";
@@ -529,7 +521,7 @@ WHERE   syscolumns.id IN ( SELECT   id
 			codeStr+="}";
 
 			// 保存文件
-			CreateFile(SetApplicationDirctory()+@"App.RESTful API\App_Code\BaseApiController.cs",codeStr,Encoding.UTF8);
+			CreateFile(solutionDir+@"App.RESTful API\App_Code\BaseApiController.cs",codeStr,Encoding.UTF8);
         }
     }
 

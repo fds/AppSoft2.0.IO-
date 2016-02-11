@@ -15,7 +15,7 @@ using SqlSugar;
  * 文件描述：一切从简，只为了更懒！
  */
 
-namespace App.SqlSugarHelper
+namespace App.ORM
 {
     public class SqlSugarInstance
     {

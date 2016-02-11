@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.SqlSugarHelper", "App.SqlSugarHelper\App.SqlSugarHelper.csproj", "{BF80E4CC-F5F8-499B-9BE7-6C1EFB9D260C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.IRepository", "App.IRepository\App.IRepository.csproj", "{D30BEE00-49A4-4606-BDA2-2C0E5FA98058}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.IServices", "App.IServices\App.IServices.csproj", "{9CFECB50-179A-4C7D-ABB5-BB0DAB70504A}"
@@ -29,16 +27,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.WeiXin API", "Api.WeiXi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.RESTful API", "App.RESTful API\App.RESTful API.csproj", "{C5E7D9B8-5977-434B-A11D-0674E121F893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.ORM", "App.ORM\App.ORM.csproj", "{3337BEF6-DC00-4F8A-BBD4-99A3DC8468A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BF80E4CC-F5F8-499B-9BE7-6C1EFB9D260C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF80E4CC-F5F8-499B-9BE7-6C1EFB9D260C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF80E4CC-F5F8-499B-9BE7-6C1EFB9D260C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF80E4CC-F5F8-499B-9BE7-6C1EFB9D260C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D30BEE00-49A4-4606-BDA2-2C0E5FA98058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D30BEE00-49A4-4606-BDA2-2C0E5FA98058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D30BEE00-49A4-4606-BDA2-2C0E5FA98058}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,6 +83,10 @@ Global
 		{C5E7D9B8-5977-434B-A11D-0674E121F893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5E7D9B8-5977-434B-A11D-0674E121F893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5E7D9B8-5977-434B-A11D-0674E121F893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3337BEF6-DC00-4F8A-BBD4-99A3DC8468A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3337BEF6-DC00-4F8A-BBD4-99A3DC8468A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3337BEF6-DC00-4F8A-BBD4-99A3DC8468A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3337BEF6-DC00-4F8A-BBD4-99A3DC8468A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
