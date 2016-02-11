@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Document
+namespace App.WeiXin_API
 {
-    class Default
+    public class Default
     {
     }
 }

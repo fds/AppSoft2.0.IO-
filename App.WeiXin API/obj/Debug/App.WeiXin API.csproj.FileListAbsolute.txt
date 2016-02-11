@@ -1,0 +1,4 @@
+F:\Github\AppSoft2.0.IO\App.WeiXin API\bin\Debug\App.WeiXin API.dll
+F:\Github\AppSoft2.0.IO\App.WeiXin API\bin\Debug\App.WeiXin API.pdb
+F:\Github\AppSoft2.0.IO\App.WeiXin API\obj\Debug\App.WeiXin API.dll
+F:\Github\AppSoft2.0.IO\App.WeiXin API\obj\Debug\App.WeiXin API.pdb

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Api.WeiXin API")]
+[assembly: AssemblyTitle("App.WeiXin API")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Api.WeiXin API")]
+[assembly: AssemblyProduct("App.WeiXin API")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("7843e2c7-f0c3-4905-bd8f-5c0ccd32f607")]
+[assembly: Guid("6093500a-b9b2-4634-809b-a84352024612")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
