@@ -20,10 +20,16 @@
 
 ### AppSoft2.0 IO 项目进度
 
+*****
+
 * **目前项目已经搭建好基本骨架，任何Web系统都可以基于她上开发。**
 * **内置功能会持续开发并更新中，欢迎关注！**
 
+*****
+
 ### AppSoft2.0 IO 系统设计及使用框架（持续更新）：
+
+*****
 
 * N层架构（抽象工厂，自动工厂，OOP，AOP）
 * **ASP.NET MVC 5/Web API2.1**
@@ -44,11 +50,15 @@
 
 ### AppSoft2.0.IO 系统架构图：
 
+*****
+
 ![输入图片说明](http://git.oschina.net/uploads/images/2016/0212/023235_1173f9d3_526496.jpeg "在这里输入图片标题")
 
 *****
 
 ### AppSoft2.0.IO 目录结构（待完善，持续更新）
+
+*****
 
 ```
 AppSoft2.0.IO  解决方案目录
@@ -73,6 +83,8 @@ AppSoft2.0.IO  解决方案目录
 *****
 
 ### AppSoft2.0.IO 系统初始化步骤：
+
+*****
 
 * 1.0 下载[http://git.oschina.net/winu.net/AppSoft2.0.IO/](AppSoft2.0.IO)
 
