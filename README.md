@@ -19,7 +19,7 @@
 * ASP.NET MVC 5/WebApi2.1
 * .NET Framework 4.6.1
 * Autofac 3.5.2
-* SqlSugar ORM 2.1
+* SqlSugar
 * Redis
 * Log4Net
 * Quartz.Net
@@ -27,4 +27,5 @@
 * NPOI
 * SuperSocket
 * Senparc.Weixin.MP
+* AutoMapping
 * MSSQL 2005 + 
