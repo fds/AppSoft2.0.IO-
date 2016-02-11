@@ -17,7 +17,7 @@
 ### AppSoft2.0 IO 系统架构组成及思想：
 
 * 三层架构，抽象工厂，自动工厂，OOP，AOP
-* **ASP.NET MVC 5/WebApi2.1**
+* **ASP.NET MVC 5/Web API2.1**
 * **.NET Framework 4.6.1**
 * Autofac 3.5.2
 * SqlSugar
@@ -36,3 +36,28 @@
 ### AppSoft2.0.IO 系统架构图：
 
 ![输入图片说明](http://git.oschina.net/uploads/images/2016/0212/023235_1173f9d3_526496.jpeg "在这里输入图片标题")
+
+*****
+
+
+### AppSoft2.0.IO 系统初始化步骤：
+
+#### 1.0 下载[http://git.oschina.net/winu.net/AppSoft2.0.IO/](AppSoft2.0.IO)
+
+#### 2.0 设置`App.RESTful API`（Web API）或`App.Site`（MVC + WebAPI）为项目启动项
+
+#### 3.0 设置2.0设置的启动项目的`Web.config`文件的`connectionStrings`节点的数据库链接字符串。
+
+#### 4.0 打开解决方案中`App.ORM`中`T4GenerateClient.tt`T4模板文件，设置`solutionDir`为你项目的绝对物理路径，以及`MssqlHelper.connStr`为数据库链接字符串
+
+#### 5.0 使用快捷键`Ctrl+S`或者点击工具栏`保存`按钮，保存`T4GenerateClient.tt`，T4模板文件会自动生成所有层的代码。
+
+#### 6.0 生成成功之后编辑器会提示`项目已被修改，是否重新加载`提示框，点击`全部重新加载`按钮即可。
+
+#### 7.0 加载完毕之后，点击`解决方案文件`，右键`重新生成解决方案`按钮，项目生成成功之后，整个项目初始化也就完成了！
+
+*****
+
+### AppSoft2.0.IO 项目实战代码：
+
+#### 1.0 在`App.RESTful API`或者`App.Site`项目`Controllers`文件夹下创建对应控制器（补充：`App.RESTful API`项目创建`Web API控制器`,`App.Site`项目创建`MVC控制器`。
