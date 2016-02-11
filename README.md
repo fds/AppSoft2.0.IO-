@@ -1,4 +1,4 @@
-### AppSoft2.0.IO不仅仅一个系统，更是你IT生涯的伴侣，AppSoft2.0.IO可以让你编程效率事半功倍！
+## AppSoft2.0.IO不仅仅一个系统，更是你IT生涯的伴侣，AppSoft2.0.IO可以让你编程效率事半功倍！
 
 > AppSoft2.0.IO 摒弃了Entity Framework，采用SqlSugar ORM框架，性能明显提升许多
 
@@ -13,7 +13,7 @@
 
 *****
 
-### AppSoft2.0 IO 系统架构组成及思想：
+## AppSoft2.0 IO 系统架构组成及思想：
 
 * 三层架构，抽象工厂，自动工厂，OOP，AOP
 * ASP.NET MVC 5/WebApi2.1
@@ -32,6 +32,6 @@
 
 *****
 
-### AppSoft2.0.IO 系统架构图：
+## AppSoft2.0.IO 系统架构图：
 
 ![输入图片说明](http://git.oschina.net/uploads/images/2016/0212/023235_1173f9d3_526496.jpeg "在这里输入图片标题")
