@@ -1,7 +1,7 @@
 ## AppSoft2.0.IO不仅仅一个通用系统框架，更是你编程生涯的伴侣，可以让你编程效率有着事半功倍效果！
 
 
-> AppSoft2.0.IO 摒弃了Entity Framework，采用[SqlSugar ORM](https://github.com/sunkaixuan/SqlSugar)框架，[SqlSugar ORM](https://github.com/sunkaixuan/SqlSugar)是最接近ADO.NET的ORM框架！
+> AppSoft2.0.IO 摒弃了Entity Framework，采用[SqlSugar](https://github.com/sunkaixuan/SqlSugar)框架，[SqlSugar](https://github.com/sunkaixuan/SqlSugar)是众多ORM框架中性能最接近ADO.NET的ORM框架！
 
 * 系统名称：AppSoft2.0.IO .NET通用开发系统
 * 系统作者：新生帝
