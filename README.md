@@ -67,8 +67,8 @@ AppSoft2.0.IO  解决方案目录
 ├─App.Filter    MVC或Web API过滤器
 ├─App.IRepository    数据表对应仓储接口
 ├─App.IServices    数据表对应服务接口
-├─App.Library    公共类库
-├─App.ORM    ORM框架，如EF，SqlSugar
+├─App.Library    常用公共类库
+├─App.ORM    ORM框架类库，如EF，SqlSugar
 ├─App.Repository    数据表对应仓储实例类
 ├─App.RESTful API    RESTful API接口项目
 ├─App.Services    数据表对应服务实例类
