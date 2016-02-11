@@ -9,6 +9,9 @@
 */
 USE DotDot
 GO
+
+-- #### UserEntity ”√ªß±Ì
+
 IF(OBJECT_ID('UserEntity','U') IS NOT NULL)
 	DROP TABLE [UserEntity]
 GO
