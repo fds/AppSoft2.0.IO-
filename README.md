@@ -54,7 +54,7 @@
 
 * 6.0 生成成功之后编辑器会提示`项目已被修改，是否重新加载`提示框，点击`全部重新加载`按钮即可。
 
-* 7.0 右键`App.Repository`和`App.Services`项目，选择`属性`，点击左边的菜单`生成`，并设置`输出路径`为`..\App.RESTful API\bin\`或者`..\App.Site\bin\`，这里取决于你设置哪个项目为启动项（`App.RESTful API`或`App.Site`）
+* 7.0 右键`App.Repository`和`App.Services`项目，选择`属性`，点击左边的菜单`生成`，并设置`输出路径`为`..\App.RESTful API\bin\`或者`..\App.Site\bin\`，这里取决于你设置哪个项目为启动项（`App.RESTful API`或`App.Site`），这里主要是为了`Autofac`依赖注入和控制反转作用的。
 
 * 8.0 加载完毕之后，点击`解决方案文件`，右键`重新生成解决方案`按钮，项目生成成功之后，整个项目初始化也就完成了！
 
@@ -65,3 +65,36 @@
 * 1.0 在`App.RESTful API`或者`App.Site`项目`Controllers`文件夹下创建对应控制器（补充：`App.RESTful API`项目创建`Web API控制器`,`App.Site`项目创建`MVC控制器`）。
 
 * 2.0 将新增的控制器继承`父控制器`（补充：`App.RESTful API`项目下的`Web API控制器`继承`BaseApiController`,`App.Site`项目下的`MVC控制器`继承`BaseController`）
+
+* 3.0 在控制器中引入`using App.Entity;`和`using App.IServices;`命名空间。
+
+* 4.0 编写控制器有参构造方法，将需要操作的服务接口声明为构造函数的形参，如：
+```
+// ApiDefaultController为上面新增控制器的名称，可以同时注入多个服务接口
+
+public ApiDefaultController(IUserServices _IUserServices)
+{
+    base._IUserServices = _IUserServices;
+}
+```
+
+* 5.0 可以调用接口对应的方法完成基本的CURD（增删改查）操作，甚至更复杂的操作，如
+```
+// 新增操作
+
+_IUserServices.Insert(new UserEntity(){
+    UserName='新生帝'
+});
+
+// 更新操作
+
+...
+
+// 删除操作
+
+...
+
+// 查询操作
+
+...
+```
