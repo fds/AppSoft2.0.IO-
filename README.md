@@ -124,6 +124,8 @@ AppSoft2.0.IO  解决方案目录
 
 ### AppSoft2.0.IO 项目实战代码：
 
+*****
+
 * 1.0 在`App.RESTful API`或者`App.Site`项目`Controllers`文件夹下创建对应控制器（补充：`App.RESTful API`项目创建`Web API控制器`,`App.Site`项目创建`MVC控制器`）。
 
 *****
