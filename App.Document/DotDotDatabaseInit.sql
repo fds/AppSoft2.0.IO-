@@ -34,7 +34,7 @@ CREATE TABLE [UserEntity]
 	RegTime DATETIME NOT NULL DEFAULT(GETDATE()),	-- 注册时间
 	RegAddress NVARCHAR(255) NULL,	-- 注册地址
 	DeviceOS VARCHAR(16) NOT NULL,	-- 设备系统
-	DeviceOSVersion VARCHAR(16) NOT NULL,	-- 设备系统
+	DeviceOSVersion VARCHAR(16) NOT NULL,	-- 设备系统版本号
 	DeviceModel VARCHAR(32) NOT NULL,	-- 设备型号
 	DeviceName VARCHAR(32) NOT NULL,	-- 设备名称
 	DeviceId VARCHAR(128) NOT NULL,	-- 设备唯一ID
@@ -62,8 +62,8 @@ EXEC sp_addextendedproperty N'MS_Description', N'微信号码', N'user', N'dbo', N't
 EXEC sp_addextendedproperty N'MS_Description', N'新浪微博号码', N'user', N'dbo', N'table', N'UserEntity', N'column', N'Sina';
 EXEC sp_addextendedproperty N'MS_Description', N'注册时间', N'user', N'dbo', N'table', N'UserEntity', N'column', N'RegTime';
 EXEC sp_addextendedproperty N'MS_Description', N'注册地址', N'user', N'dbo', N'table', N'UserEntity', N'column', N'RegAddress';
-EXEC sp_addextendedproperty N'MS_Description', N'设备型号', N'user', N'dbo', N'table', N'UserEntity', N'column', N'DeviceOS';
-EXEC sp_addextendedproperty N'MS_Description', N'设备系统', N'user', N'dbo', N'table', N'UserEntity', N'column', N'DeviceOSVersion';
+EXEC sp_addextendedproperty N'MS_Description', N'设备系统', N'user', N'dbo', N'table', N'UserEntity', N'column', N'DeviceOS';
+EXEC sp_addextendedproperty N'MS_Description', N'设备系统版本号', N'user', N'dbo', N'table', N'UserEntity', N'column', N'DeviceOSVersion';
 EXEC sp_addextendedproperty N'MS_Description', N'设备型号', N'user', N'dbo', N'table', N'UserEntity', N'column', N'DeviceModel';
 EXEC sp_addextendedproperty N'MS_Description', N'设备名称', N'user', N'dbo', N'table', N'UserEntity', N'column', N'DeviceName';
 EXEC sp_addextendedproperty N'MS_Description', N'设备唯一ID', N'user', N'dbo', N'table', N'UserEntity', N'column', N'DeviceId';
