@@ -2,3 +2,4 @@ F:\Github\AppSoft2.0.IO\App.Entity\bin\Debug\App.Entity.dll
 F:\Github\AppSoft2.0.IO\App.Entity\bin\Debug\App.Entity.pdb
 F:\Github\AppSoft2.0.IO\App.Entity\obj\Debug\App.Entity.dll
 F:\Github\AppSoft2.0.IO\App.Entity\obj\Debug\App.Entity.pdb
+F:\Github\AppSoft2.0.IO\App.Entity\obj\Debug\App.Entity.csprojResolveAssemblyReference.cache
