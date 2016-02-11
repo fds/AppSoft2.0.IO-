@@ -94,7 +94,7 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-* 打开解决方案后，设置`App.RESTful API`（Web API）或`App.Site`（MVC + WebAPI）为项目启动项
+* 打开`AppSoft2.0.IO.sln`解决方案后，设置`App.RESTful API`（Web API）或`App.Site`（MVC + WebAPI）为项目启动项，取决你是做Web开发或者Api接口开发。
 
 *****
 
