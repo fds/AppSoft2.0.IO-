@@ -54,10 +54,14 @@
 
 * 6.0 生成成功之后编辑器会提示`项目已被修改，是否重新加载`提示框，点击`全部重新加载`按钮即可。
 
-* 7.0 加载完毕之后，点击`解决方案文件`，右键`重新生成解决方案`按钮，项目生成成功之后，整个项目初始化也就完成了！
+* 7.0 右键`App.Repository`和`App.Services`项目，选择`属性`，点击左边的菜单`生成`，并设置`输出路径`为`..\App.RESTful API\bin\`或者`..\App.Site\bin\`，这里取决于你设置哪个项目为启动项（`App.RESTful API`或`App.Site`）
+
+* 8.0 加载完毕之后，点击`解决方案文件`，右键`重新生成解决方案`按钮，项目生成成功之后，整个项目初始化也就完成了！
 
 *****
 
 ### AppSoft2.0.IO 项目实战代码：
 
-* 1.0 在`App.RESTful API`或者`App.Site`项目`Controllers`文件夹下创建对应控制器（补充：`App.RESTful API`项目创建`Web API控制器`,`App.Site`项目创建`MVC控制器`。
+* 1.0 在`App.RESTful API`或者`App.Site`项目`Controllers`文件夹下创建对应控制器（补充：`App.RESTful API`项目创建`Web API控制器`,`App.Site`项目创建`MVC控制器`）。
+
+* 2.0 将新增的控制器继承`父控制器`（补充：`App.RESTful API`项目下的`Web API控制器`继承`BaseApiController`,`App.Site`项目下的`MVC控制器`继承`BaseController`）
