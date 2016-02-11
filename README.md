@@ -56,6 +56,7 @@
 * SuperSocket
 * Senparc.Weixin.MP
 * AutoMapper
+* i18n
 * SQL Server 2005 + 
 
 *****
