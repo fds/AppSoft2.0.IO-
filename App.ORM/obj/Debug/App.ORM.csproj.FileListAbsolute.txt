@@ -1,6 +1,6 @@
 F:\Github\AppSoft2.0.IO\App.ORM\bin\Debug\App.ORM.dll
 F:\Github\AppSoft2.0.IO\App.ORM\bin\Debug\App.ORM.pdb
 F:\Github\AppSoft2.0.IO\App.ORM\bin\Debug\SqlSugar.dll
+F:\Github\AppSoft2.0.IO\App.ORM\obj\Debug\App.ORM.csprojResolveAssemblyReference.cache
 F:\Github\AppSoft2.0.IO\App.ORM\obj\Debug\App.ORM.dll
 F:\Github\AppSoft2.0.IO\App.ORM\obj\Debug\App.ORM.pdb
-F:\Github\AppSoft2.0.IO\App.ORM\obj\Debug\App.ORM.csprojResolveAssemblyReference.cache
