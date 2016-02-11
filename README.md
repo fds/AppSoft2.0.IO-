@@ -28,7 +28,7 @@
 * NPOI
 * SuperSocket
 * Senparc.Weixin.MP
-* AutoMapping
+* AutoMapper
 * MSSQL 2005 + 
 
 *****
