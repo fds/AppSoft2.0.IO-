@@ -1,7 +1,10 @@
 ## AppSoft2.0.IO不仅仅一个通用系统框架，更是你编程生涯的伴侣，可以让你编程效率有着事半功倍效果！
 
+*****
 
 > AppSoft2.0.IO 摒弃了Entity Framework，采用[SqlSugar](https://github.com/sunkaixuan/SqlSugar)框架，[SqlSugar](https://github.com/sunkaixuan/SqlSugar)是众多ORM框架中性能最接近ADO.NET的ORM框架！
+
+*****
 
 * 系统名称：AppSoft2.0.IO .NET通用开发系统
 * 系统作者：新生帝
@@ -152,7 +155,7 @@ _IUserServices.Insert(new UserEntity(){
 
 ### AppSoft2.0.IO 友情捐赠
 
-* 如果你觉得 点点例 对你有价值，并且愿意让她继续成长下去，你可以资助这个项目的开发。
+如果你觉得 点点例 对你有价值，并且愿意让她继续成长下去，你可以资助这个项目的开发。
 
 ![友情捐赠AppSoft2.0.IO](http://git.oschina.net/uploads/images/2016/0207/160936_8f2d5f2e_526496.png "友情捐赠AppSoft2.0.IO")
 
