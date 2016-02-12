@@ -47,7 +47,7 @@
 * **ASP.NET MVC 5/Web API2.1**
 * **.NET Framework 4.6.1**
 * Autofac 3.5.2
-* [SqlSugar](https://github.com/sunkaixuan/SqlSugar)
+* [SqlSugar](https://github.com/sunkaixuan/SqlSugar) [文档说明](http://www.cnblogs.com/sunkaixuan/p/4649904.html)
 * Redis
 * Log4Net
 * Quartz.Net
