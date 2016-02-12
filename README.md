@@ -129,19 +129,19 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-* 设置2.0设置的启动项目的`Web.config`文件的`connectionStrings`节点的数据库链接字符串。
+* 设置的上述设置的启动项目中的`Web.config`文件`connectionStrings`节点为数据库链接字符串。
 
 *****
 
-* 打开解决方案中`App.ORM`中`T4GenerateClient.tt`T4模板文件，设置`solutionDir`为你项目的绝对物理路径，以及`MssqlHelper.connStr`为数据库链接字符串
+* 打开解决方案中`App.ORM`中`T4GenerateClient.tt`T4模板文件，设置`solutionDir`为你解决方案的绝对物理路径，以及`MssqlHelper.connStr`为数据库链接字符串
 
 *****
 
-* 使用快捷键`Ctrl+S`或者点击工具栏`保存`按钮，保存`T4GenerateClient.tt`，T4模板文件会自动生成所有层的代码。
+* 使用快捷键`Ctrl+S`或者点击工具栏`保存`按钮，保存`T4GenerateClient.tt`文件，这时T4模板文件会自动生成所有层的代码，一般数据库表结构发生改变都应该执行保存一次。
 
 *****
 
-* 生成成功之后编辑器会提示`项目已被修改，是否重新加载`提示框，点击`全部重新加载`按钮即可。
+* 生成成功之后编辑器会提示`项目已被修改，是否重新加载`提示框，点击`全部重新加载`按钮即可，项目会自动生成所需文件和自动包含指定文件到指定目录。
 
 *****
 
@@ -149,7 +149,7 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-* 加载完毕之后，点击`解决方案文件`，右键`重新生成解决方案`按钮，项目生成成功之后，整个项目初始化也就完成了！
+* 加载完毕之后，右击`解决方案文件`，选择`重新生成解决方案`按钮，项目重新生成成功之后，整个项目初始化也就完成了！
 
 *****
 
@@ -161,15 +161,15 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-* 将新增的控制器继承`父控制器`（补充：`App.RESTful API`项目下的`Web API控制器`继承`BaseApiController`,`App.Site`项目下的`MVC控制器`继承`BaseController`）
+* 将新增的控制器继承`父控制器`（补充：`App.RESTful API`项目下的`Web API控制器应`继承`BaseApiController`,`App.Site`项目下的`MVC控制器`应继承`BaseController`）
 
 *****
 
-* 在控制器中引入`using App.Entity;`和`using App.IServices;`命名空间。
+* 在控制器中头部引入`App.Entity;`和`App.IServices;`命名空间。
 
 *****
 
-* 编写控制器有参构造方法，将需要操作的服务接口声明为构造函数的形参，如：
+* 编写控制器有参构造方法，将需要操作的服务接口声明为构造函数的形参，主要作用是项目启动时，Autofac会向控制器构造方法注入服务和仓储实例对象，如：
 
 
 ```C#
@@ -184,7 +184,7 @@ public ApiDefaultController(IUserServices _IUserServices)
 
 *****
 
-* 可以调用接口对应的方法完成基本的CURD（增删改查）操作，甚至更复杂的操作，如：
+* 可以调用接口对应的方法完成基本的CURD（增改查删）操作，甚至更复杂的操作，如：
 
 
 ```C#
