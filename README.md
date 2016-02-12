@@ -59,6 +59,8 @@
 * Senparc.Weixin.MP
 * AutoMapper
 * i18n
+* RBAC
+* WorkFlow
 * SQL Server 2005 + 
 
 *****
