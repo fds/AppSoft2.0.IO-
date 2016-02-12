@@ -212,6 +212,8 @@ _IUserServices.Insert(new UserEntity(){
 
 ### AppSoft2.0.IO 应用场景（持续更新）：
 
+*****
+
 * Web软件系统开发
 * 企业/门户网站开发
 * 管理系统开发
@@ -225,6 +227,8 @@ _IUserServices.Insert(new UserEntity(){
 *****
 
 ### AppSoft2.0.IO 欢迎捐赠
+
+*****
 
 如果你觉得 AppSoft2.0.IO 对你有价值，并且愿意让她继续成长下去，你可以资助这个项目的开发，为作者加油打气。
 
