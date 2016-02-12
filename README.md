@@ -224,11 +224,11 @@ _IUserServices.Insert(new UserEntity(){
 
 *****
 
-### AppSoft2.0.IO 友情捐赠
+### AppSoft2.0.IO 欢迎捐赠
 
-如果你觉得 点点例 对你有价值，并且愿意让她继续成长下去，你可以资助这个项目的开发。
+如果你觉得 AppSoft2.0.IO 对你有价值，并且愿意让她继续成长下去，你可以资助这个项目的开发，为作者加油打气。
 
-![友情捐赠AppSoft2.0.IO](http://git.oschina.net/uploads/images/2016/0207/160936_8f2d5f2e_526496.png "友情捐赠AppSoft2.0.IO")
+![欢迎捐赠AppSoft2.0.IO](http://git.oschina.net/uploads/images/2016/0207/160936_8f2d5f2e_526496.png "欢迎捐赠AppSoft2.0.IO")
 
 *****
 
