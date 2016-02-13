@@ -62,6 +62,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="README.md" />
     <None Include="T4GenerateCore.ttinclude" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

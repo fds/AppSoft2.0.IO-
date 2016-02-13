@@ -15,7 +15,6 @@ F:\Github\AppSoft2.0.IO\App.Site\bin\App.Site.dll.config
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.Site.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.Site.pdb
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.Entity.dll
-F:\Github\AppSoft2.0.IO\App.Site\bin\App.Filter.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.IServices.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.Library.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.Vector.dll
@@ -47,7 +46,6 @@ F:\Github\AppSoft2.0.IO\App.Site\bin\ServiceStack.Interfaces.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\ServiceStack.Text.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\ServiceStack.Common.dll
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.Entity.pdb
-F:\Github\AppSoft2.0.IO\App.Site\bin\App.Filter.pdb
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.IServices.pdb
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.Library.pdb
 F:\Github\AppSoft2.0.IO\App.Site\bin\App.Vector.pdb

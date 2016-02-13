@@ -15,7 +15,6 @@ F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.RESTful API.dll.config
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.RESTful API.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.RESTful API.pdb
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Entity.dll
-F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Filter.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.IServices.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Library.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Vector.dll
@@ -39,7 +38,6 @@ F:\Github\AppSoft2.0.IO\App.RESTful API\bin\ServiceStack.Interfaces.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\ServiceStack.Text.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\ServiceStack.Common.dll
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Entity.pdb
-F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Filter.pdb
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.IServices.pdb
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Library.pdb
 F:\Github\AppSoft2.0.IO\App.RESTful API\bin\App.Vector.pdb
