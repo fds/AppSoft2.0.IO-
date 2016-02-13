@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace App.Library
 {
-    class Default
+    public class AppKey
     {
+       
     }
 }

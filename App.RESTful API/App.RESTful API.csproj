@@ -147,7 +147,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -167,6 +166,10 @@
     <ProjectReference Include="..\App.Library\App.Library.csproj">
       <Project>{444659fb-5de7-4ea8-8c90-b5c715b75c08}</Project>
       <Name>App.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Vector\App.Vector.csproj">
+      <Project>{bc7fcbce-2008-446c-8467-6d9ab3951233}</Project>
+      <Name>App.Vector</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -14,6 +14,7 @@ namespace App.RESTful_API
             Bootstrapper.StartRegisterDependencies();
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
         }
     }
 }

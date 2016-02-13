@@ -247,7 +247,8 @@ public class MssqlHelper
         if (!string.IsNullOrEmpty(tableName) && !string.IsNullOrWhiteSpace(tableName))
         {
             // 引用
-            string codeStr = "using System;\r\n\r\n";
+            string codeStr = "using System;\r\n";
+			codeStr+="using System.Runtime.Serialization;\r\n\r\n";
 
             // 描述信息
             codeStr += "/*!\r\n";
@@ -265,7 +266,7 @@ public class MssqlHelper
             codeStr += "{\r\n";
 
             // 序列化
-            codeStr += "\t[Serializable]\r\n";
+            codeStr += "\t[DataContract]\r\n";
 
             // 生成类声明
             codeStr += "\tpublic partial class " + tableName + "\r\n";
@@ -281,6 +282,8 @@ public class MssqlHelper
                 codeStr += "\t\t/// " + tableColumn.COLUMN_DESCRIPTION + "\r\n";
                 codeStr += "\t\t/// </summary>\r\n";
 
+				// 序列化
+				codeStr += "\t\t[DataMember]\r\n";
                 // 生成属性
                 codeStr += "\t\tpublic " + SqlServerDbTypeMap.MapCsharpType(tableColumn.DATA_TYPE.ToString()) + " " + tableColumn.COLUMN_NAME.ToString() + " { get; set; }\r\n\r\n";
             }

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using App.Entity;
 using App.IServices;
+using App.Vector;
 
 namespace App.RESTful_API.Controllers
 {
@@ -19,9 +20,9 @@ namespace App.RESTful_API.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public List<UserEntity> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _IUserServices.QueryByWherePage(1, 20, c => true, "UserID desc");
         }
 
         // GET api/<controller>/5
