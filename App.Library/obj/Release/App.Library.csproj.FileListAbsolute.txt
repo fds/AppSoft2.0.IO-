@@ -1,0 +1,4 @@
+F:\Github\AppSoft2.0.IO\App.Library\bin\Release\App.Library.dll
+F:\Github\AppSoft2.0.IO\App.Library\bin\Release\App.Library.pdb
+F:\Github\AppSoft2.0.IO\App.Library\obj\Release\App.Library.dll
+F:\Github\AppSoft2.0.IO\App.Library\obj\Release\App.Library.pdb
