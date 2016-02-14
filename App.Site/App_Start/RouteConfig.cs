@@ -13,10 +13,18 @@ namespace App.Site
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // 定义插件路由
+            routes.MapRoute(
+               name: "PluginRoute",
+               url: "{controller}/{action}/{pluginName}/{id}",
+               defaults: new { controller = "Home", action = "Index", pluginName = "Plugin", id = UrlParameter.Optional },
+               constraints: new { pluginName = @"^[0-9a-zA-Z]+Plugin$" }
+           );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, pluginName = "" }
             );
         }
     }

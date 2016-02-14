@@ -68,6 +68,8 @@
     <Content Include="Autofac\Autofac.dll" />
     <Content Include="Autofac\Autofac.Integration.Mvc.dll" />
     <Content Include="Autofac\Autofac.Integration.WebApi.dll" />
+    <Content Include="Mvc\System.Web.Mvc.dll" />
+    <Content Include="Mvc\System.Web.Webpages.Razor.dll" />
     <Content Include="Redis\ServiceStack.Common.dll" />
     <Content Include="Redis\ServiceStack.Interfaces.dll" />
     <Content Include="Redis\ServiceStack.Redis.dll" />

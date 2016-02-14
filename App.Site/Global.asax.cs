@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using App.PluginFactory;
 
 namespace App.Site
 {
@@ -21,6 +22,13 @@ namespace App.Site
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // 重写默认控制器工厂为插件控制器工厂
+            ControllerBuilder.Current.SetControllerFactory(new PluginControllerFactory());
+
+            //移除当前MVC主站点中的所有视图引擎，采用自定义视图引擎
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new PluginRazorViewEngine());
         }
     }
 }

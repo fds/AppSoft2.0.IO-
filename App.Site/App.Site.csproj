@@ -6,7 +6,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C170DF8A-B1E6-44F7-A3F3-2382DE5CBE4E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -21,7 +22,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -145,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Plugins\TestPlugin\Libs\App.TestPlugin.dll" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +172,8 @@
     <Content Include="scripts\README.md" />
     <Content Include="Content\README.md" />
     <Content Include="App_Data\README.md" />
+    <Content Include="Plugins\TestPlugin\Views\Default\Index.cshtml" />
+    <Content Include="Plugins\TestPlugin\Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,6 +196,10 @@
     <ProjectReference Include="..\App.Library\App.Library.csproj">
       <Project>{444659fb-5de7-4ea8-8c90-b5c715b75c08}</Project>
       <Name>App.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.PluginFactory\App.PluginFactory.csproj">
+      <Project>{3cdb5348-71db-41ef-a535-3cad0263906f}</Project>
+      <Name>App.PluginFactory</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.Vector\App.Vector.csproj">
       <Project>{bc7fcbce-2008-446c-8467-6d9ab3951233}</Project>
@@ -215,7 +224,8 @@
           <IISUrl>http://localhost:35203/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
