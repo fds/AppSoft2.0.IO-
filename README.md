@@ -97,6 +97,7 @@ AppSoft2.0.IO  解决方案目录
 ├─App.RESTful API    RESTful API接口项目
 ├─App.Services    数据表对应服务实例类
 ├─App.Site    网站项目
+├─App.TestPlugin    测试插件示例
 ├─App.Vector    第三方提供DLL或者操作帮助类
 ├─App.WeiXin API	微信平台开发API接口
 ├─README.md	README文件
