@@ -8,7 +8,7 @@
 
  *****
 
- > ### UserEntity 用户表
+ > ### Dot_UserEntity 用户表
 
  * `UserID`：用户ID，INT，主键，自增，NOT NULL
  * `UserName`：用户昵称，NVARCHAR(64)，NOT NULL
