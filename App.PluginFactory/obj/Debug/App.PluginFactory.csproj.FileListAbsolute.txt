@@ -1,6 +1,0 @@
-F:\Github\AppSoft2.0.IO\App.PluginFactory\bin\Debug\App.PluginFactory.dll
-F:\Github\AppSoft2.0.IO\App.PluginFactory\bin\Debug\App.PluginFactory.pdb
-F:\Github\AppSoft2.0.IO\App.PluginFactory\bin\Debug\System.Web.Mvc.dll
-F:\Github\AppSoft2.0.IO\App.PluginFactory\bin\Debug\System.Web.Webpages.Razor.dll
-F:\Github\AppSoft2.0.IO\App.PluginFactory\obj\Debug\App.PluginFactory.dll
-F:\Github\AppSoft2.0.IO\App.PluginFactory\obj\Debug\App.PluginFactory.pdb

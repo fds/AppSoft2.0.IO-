@@ -1,7 +1,0 @@
-F:\Github\AppSoft2.0.IO\App.IServices\bin\Release\App.IServices.dll
-F:\Github\AppSoft2.0.IO\App.IServices\bin\Release\App.IServices.pdb
-F:\Github\AppSoft2.0.IO\App.IServices\bin\Release\App.Entity.dll
-F:\Github\AppSoft2.0.IO\App.IServices\bin\Release\App.Entity.pdb
-F:\Github\AppSoft2.0.IO\App.IServices\obj\Release\App.IServices.csprojResolveAssemblyReference.cache
-F:\Github\AppSoft2.0.IO\App.IServices\obj\Release\App.IServices.dll
-F:\Github\AppSoft2.0.IO\App.IServices\obj\Release\App.IServices.pdb
