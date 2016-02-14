@@ -17,14 +17,14 @@ namespace App.Site
             routes.MapRoute(
                name: "PluginRoute",
                url: "{controller}/{action}/{pluginName}/{id}",
-               defaults: new { controller = "Home", action = "Index", pluginName = "Plugin", id = UrlParameter.Optional },
+               defaults: new { controller = "Default", action = "Index", pluginName = "Plugin", id = UrlParameter.Optional },
                constraints: new { pluginName = @"^[0-9a-zA-Z]+Plugin$" }
            );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, pluginName = "" }
+                defaults: new { controller = "Default", action = "Index", id = UrlParameter.Optional, pluginName = "" }
             );
         }
     }
