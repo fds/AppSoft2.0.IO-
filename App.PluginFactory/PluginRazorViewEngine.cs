@@ -23,63 +23,51 @@ namespace App.PluginFactory
             Regex pluginNameReg = new Regex("^[0-9a-zA-Z]+Plugin$");
             bool isPlugin = pluginNameReg.Match(pluginName).Success;
 
+            string[] AreaViewLocationFormats = {
+                   "~/Areas/{2}/Views/{1}/{0}.cshtml",
+                    "~/Areas/{2}/Views/Shared/{1}/{0}.cshtml"
+                };
+
+            string[] ViewLocationFormats = {
+                   "~/Views/{1}/{0}.cshtml",
+                    "~/Views/Shared/{1}/{0}.cshtml"
+             };
+
             // 如果是插件
             if (isPlugin)
             {
-                // 将父类RazorViewEngine中的LocationFormats设置自定义的路径
-                base.AreaPartialViewLocationFormats = new string[]{
-                    "~/Plugins/"+pluginName+"/Areas/{2}/Views/{1}/{0}.cshtml",
-                    "~/Plugins/"+pluginName+"/Areas/{2}/Views/Shared/{1}/{0}.cshtml"
+                AreaViewLocationFormats = new string[]{
+                    "~/Plugins/" + pluginName + "/Areas/{2}/Views/{1}/{0}.cshtml",
+                    "~/Plugins/" + pluginName + "/Areas/{2}/Views/Shared/{1}/{0}.cshtml"
                 };
-                base.AreaViewLocationFormats = new string[]{
-                    "~/Plugins/"+pluginName+"/Areas/{2}/Views/{1}/{0}.cshtml",
-                    "~/Plugins/"+pluginName+"/Areas/{2}/Views/Shared/{1}/{0}.cshtml"
+                ViewLocationFormats = new string[]{
+                    "~/Plugins/" + pluginName + "/Views/{1}/{0}.cshtml",
+                    "~/Plugins/" + pluginName + "/Views/Shared/{1}/{0}.cshtml"
                 };
-                base.AreaMasterLocationFormats = new string[] {
-                    "~/Plugins/"+pluginName+"/Areas/{2}/Views/{1}/{0}.cshtml",
-                    "~/Plugins/"+pluginName+"/Areas/{2}/Views/Shared/{1}/{0}.cshtml"
-                };
-                base.ViewLocationFormats = new string[] {
-                      "~/Plugins/"+pluginName+"/Views/{1}/{0}.cshtml",
-                    "~/Plugins/"+pluginName+"/Views/Shared/{1}/{0}.cshtml"
-                };
-                base.PartialViewLocationFormats = new string[]{
-                    "~/Plugins/"+pluginName+"/Views/{1}/{0}.cshtml",
-                    "~/Plugins/"+pluginName+"/Views/Shared/{1}/{0}.cshtml"
-                };
-                base.MasterLocationFormats = new string[]{
-                    "~/Plugins/"+pluginName+"/Views/{1}/{0}.cshtml",
-                    "~/Plugins/"+pluginName+"/Views/Shared/{1}/{0}.cshtml"
-                };
+
             }
             else
             {
-                // 将父类RazorViewEngine中的LocationFormats设置自定义的路径
-                base.AreaPartialViewLocationFormats = new string[]{
+                AreaViewLocationFormats = new string[]{
                     "~/Areas/{2}/Views/{1}/{0}.cshtml",
                     "~/Areas/{2}/Views/Shared/{1}/{0}.cshtml"
                 };
-                base.AreaViewLocationFormats = new string[]{
-                    "~/Areas/{2}/Views/{1}/{0}.cshtml",
-                    "~/Areas/{2}/Views/Shared/{1}/{0}.cshtml"
-                };
-                base.AreaMasterLocationFormats = new string[]{
-                    "~/Areas/{2}/Views/{1}/{0}.cshtml",
-                    "~/Areas/{2}/Views/Shared/{1}/{0}.cshtml"
-                };
-                base.ViewLocationFormats = new string[] {
+
+                ViewLocationFormats = new string[]{
                     "~/Views/{1}/{0}.cshtml",
                     "~/Views/Shared/{1}/{0}.cshtml"
-                };
-                base.PartialViewLocationFormats = new string[]{
-                    "~/Views/{1}/{0}.cshtml",
-                    "~/Views/Shared/{1}/{0}.cshtml"
-                };
-                base.MasterLocationFormats = new string[]{
-                    "~/Views/{1}/{0}.cshtml",
-                    "~/Views/Shared/{1}/{0}.cshtml"
-                };
+               };
             }
+
+            // 将父类RazorViewEngine中的LocationFormats设置自定义的路径
+
+            base.AreaPartialViewLocationFormats = AreaViewLocationFormats;
+            base.AreaViewLocationFormats = AreaViewLocationFormats;
+            base.AreaMasterLocationFormats = AreaViewLocationFormats;
+
+            base.ViewLocationFormats = ViewLocationFormats;
+            base.PartialViewLocationFormats = ViewLocationFormats;
+            base.MasterLocationFormats = ViewLocationFormats;
 
             // 重写视图引擎将 视图编译成前台页面类的方法
             RazorBuildProvider.CodeGenerationStarted += RazorBuildProvider_CodeGenerationStarted;

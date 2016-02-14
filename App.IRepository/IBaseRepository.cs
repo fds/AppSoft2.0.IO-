@@ -37,6 +37,15 @@ namespace App.IRepository
         List<object> InsertRange(List<T> entites, bool isIdentity = true);
         #endregion
 
+        #region 方法：更新实体所有的列 + bool Update(T model)
+        /// <summary>
+        /// 更新实体所有的列
+        /// </summary>
+        /// <param name="model">实体对象，主键必须是第一位</param>
+        /// <returns></returns>
+        bool Update(T model);
+        #endregion
+
         #region 方法：更新数据 + bool Update<FiledType>(object model, params FiledType[] whereIn)
         /// <summary>
         /// 更新数据

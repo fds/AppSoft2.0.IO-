@@ -46,6 +46,18 @@ namespace App.Services
         }
         #endregion
 
+        #region 方法：更新实体所有的列 + public bool Update(T model)
+        /// <summary>
+        /// 更新实体所有的列
+        /// </summary>
+        /// <param name="model">实体对象，主键必须是第一位</param>
+        /// <returns></returns>
+        public bool Update(T model)
+        {
+            return _IBaseRepository.Update(model);
+        }
+        #endregion
+
         #region 方法：更新数据 + public bool Update<FiledType>(object model, params FiledType[] whereIn)
         /// <summary>
         /// 更新数据
