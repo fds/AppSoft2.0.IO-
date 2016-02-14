@@ -61,6 +61,7 @@
 * i18n
 * RBAC
 * WorkFlow
+* nVelocity
 * SQL Server 2005 + 
 
 *****
