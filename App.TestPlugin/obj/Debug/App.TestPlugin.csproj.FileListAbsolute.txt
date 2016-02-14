@@ -47,5 +47,6 @@ F:\Github\AppSoft2.0.IO\App.TestPlugin\bin\zh-Hans\System.Web.Webpages.Deploymen
 F:\Github\AppSoft2.0.IO\App.TestPlugin\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 F:\Github\AppSoft2.0.IO\App.TestPlugin\bin\zh-Hans\System.Web.Helpers.resources.dll
 F:\Github\AppSoft2.0.IO\App.TestPlugin\bin\zh-Hans\System.Web.Mvc.resources.dll
+F:\Github\AppSoft2.0.IO\App.TestPlugin\obj\Debug\App.TestPlugin.csprojResolveAssemblyReference.cache
 F:\Github\AppSoft2.0.IO\App.TestPlugin\obj\Debug\App.TestPlugin.dll
 F:\Github\AppSoft2.0.IO\App.TestPlugin\obj\Debug\App.TestPlugin.pdb
