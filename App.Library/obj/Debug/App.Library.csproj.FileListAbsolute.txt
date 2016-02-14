@@ -1,5 +1,4 @@
 F:\Github\AppSoft2.0.IO\App.Library\bin\Debug\App.Library.dll
 F:\Github\AppSoft2.0.IO\App.Library\bin\Debug\App.Library.pdb
-F:\Github\AppSoft2.0.IO\App.Library\obj\Debug\App.Library.csprojResolveAssemblyReference.cache
 F:\Github\AppSoft2.0.IO\App.Library\obj\Debug\App.Library.dll
 F:\Github\AppSoft2.0.IO\App.Library\obj\Debug\App.Library.pdb

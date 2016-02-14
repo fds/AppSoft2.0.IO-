@@ -6,6 +6,5 @@ F:\Github\AppSoft2.0.IO\App.Vector\bin\Debug\ServiceStack.Redis.dll
 F:\Github\AppSoft2.0.IO\App.Vector\bin\Debug\ServiceStack.Text.dll
 F:\Github\AppSoft2.0.IO\App.Vector\bin\Debug\StackExchange.Redis.dll
 F:\Github\AppSoft2.0.IO\App.Vector\bin\Debug\ServiceStack.Text.xml
-F:\Github\AppSoft2.0.IO\App.Vector\obj\Debug\App.Vector.csprojResolveAssemblyReference.cache
 F:\Github\AppSoft2.0.IO\App.Vector\obj\Debug\App.Vector.dll
 F:\Github\AppSoft2.0.IO\App.Vector\obj\Debug\App.Vector.pdb

@@ -139,6 +139,8 @@ public class DataTableMap
 // 模板帮助库
 public class MssqlHelper
 {
+	public static string prefix{ get; set;}
+
     public static string connStr { get; set; }
 
     // 执行Sql语句
@@ -246,6 +248,12 @@ public class MssqlHelper
     {
         if (!string.IsNullOrEmpty(tableName) && !string.IsNullOrWhiteSpace(tableName))
         {
+			// 生成字段
+            List<DataTableMap> tableColumns = GetTableColumns(tableName);
+
+			// 替换表前缀
+			tableName=string.IsNullOrEmpty(MssqlHelper.prefix)?tableName: tableName.Replace(MssqlHelper.prefix,"");
+
             // 引用
             string codeStr = "using System;\r\n";
 			codeStr+="using System.Runtime.Serialization;\r\n\r\n";
@@ -273,8 +281,6 @@ public class MssqlHelper
             codeStr += "\t{\r\n";
 
 
-            // 生成字段
-            List<DataTableMap> tableColumns = GetTableColumns(tableName);
             foreach (DataTableMap tableColumn in tableColumns)
             {
                 // 生成字段描述
@@ -305,6 +311,9 @@ public class MssqlHelper
     {
         if (!string.IsNullOrEmpty(tableName) && !string.IsNullOrWhiteSpace(tableName))
         {
+			// 替换表前缀
+			tableName=string.IsNullOrEmpty(MssqlHelper.prefix)?tableName: tableName.Replace(MssqlHelper.prefix,"");
+
             // 仓储名称
             string repositoryName = "I" + tableName.Replace("Entity", "") + "Repository";
 
@@ -348,6 +357,9 @@ public class MssqlHelper
     {
         if (!string.IsNullOrEmpty(tableName) && !string.IsNullOrWhiteSpace(tableName))
         {
+			// 替换表前缀
+			tableName=string.IsNullOrEmpty(MssqlHelper.prefix)?tableName: tableName.Replace(MssqlHelper.prefix,"");
+
             // 仓储名称
             string repositoryName = tableName.Replace("Entity", "") + "Repository";
 
@@ -392,6 +404,9 @@ public class MssqlHelper
     {
         if (!string.IsNullOrEmpty(tableName) && !string.IsNullOrWhiteSpace(tableName))
         {
+			// 替换表前缀
+			tableName=string.IsNullOrEmpty(MssqlHelper.prefix)?tableName: tableName.Replace(MssqlHelper.prefix,"");
+
             // 服务名称
             string servicesName = "I" + tableName.Replace("Entity", "") + "Services";
 
@@ -435,6 +450,9 @@ public class MssqlHelper
     {
         if (!string.IsNullOrEmpty(tableName) && !string.IsNullOrWhiteSpace(tableName))
         {
+			// 替换表前缀
+			tableName=string.IsNullOrEmpty(MssqlHelper.prefix)?tableName: tableName.Replace(MssqlHelper.prefix,"");
+
             // 仓储名称
             string servicesName = tableName.Replace("Entity", "") + "Services";
 
@@ -515,9 +533,13 @@ public class MssqlHelper
 
         codeStr += "\t{\r\n";
 
+		string _tableName=string.Empty;
         foreach (string tableName in tableNames)
         {
-            codeStr += "\t\tprotected I" + tableName.Replace("Entity", "") + "Services _I" + tableName.Replace("Entity", "") + "Services;\r\n";
+			// 替换表前缀
+			_tableName=string.IsNullOrEmpty(MssqlHelper.prefix)?tableName: tableName.Replace(MssqlHelper.prefix,"");
+
+            codeStr += "\t\tprotected I" + _tableName.Replace("Entity", "") + "Services _I" + _tableName.Replace("Entity", "") + "Services;\r\n";
         }
 
         // 生成类声明结束符
@@ -558,9 +580,13 @@ public class MssqlHelper
 
         codeStr += "\t{\r\n";
 
+		string _tableName=string.Empty;
         foreach (string tableName in tableNames)
         {
-            codeStr += "\t\tprotected I" + tableName.Replace("Entity", "") + "Services _I" + tableName.Replace("Entity", "") + "Services;\r\n";
+			// 替换表前缀
+			_tableName=string.IsNullOrEmpty(MssqlHelper.prefix)?tableName: tableName.Replace(MssqlHelper.prefix,"");
+
+            codeStr += "\t\tprotected I" + _tableName.Replace("Entity", "") + "Services _I" + _tableName.Replace("Entity", "") + "Services;\r\n";
         }
 
         // 生成类声明结束符
@@ -572,6 +598,66 @@ public class MssqlHelper
 
         // 包含项目
         ContainFileToCsproj(@"App_Code\BaseApiController" + ".cs", solutionDir, "App.RESTful API");
+    }
+
+	// 生成表和实体类的映射
+    public static void CreateTableEntityMapping(List<string> tableNames, string solutionDir)
+    {
+        // 引用
+        string codeStr = "using SqlSugar;\r\n";
+        codeStr += "using System.Collections.Generic;\r\n\r\n";
+
+        // 描述信息
+        codeStr += "/*!\r\n";
+        codeStr += "* 文件名称：SqlSugarInstance分部映射文件SqlSugarTablesMapping.cs\r\n";
+        codeStr += "* 文件作者：新生帝\r\n";
+        codeStr += "* 编写日期：" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\r\n";
+        codeStr += "* 版权所有：中山赢友网络科技有限公司\r\n";
+        codeStr += "* 企业官网：http://www.winu.net\r\n";
+        codeStr += "* 开源协议：GPL v2 License\r\n";
+        codeStr += "* 文件描述：一切从简，只为了更懒！\r\n";
+        codeStr += "*/\r\n";
+
+        // 命名空间声明
+        codeStr += "namespace App.ORM\r\n";
+        codeStr += "{\r\n";
+
+        // 生成接口声明
+        codeStr += "\tpublic partial class SqlSugarInstance\r\n";
+
+        codeStr += "\t{\r\n";
+
+		codeStr+="\t\tprivate static List<KeyValue> _MappingTables = new List<KeyValue>()\r\n";
+		codeStr+="\t\t{\r\n";
+
+		string tableName=string.Empty;
+		string _tableName=string.Empty;
+
+        for (int i = 0; i < tableNames.Count(); i++)
+        {
+			 tableName=tableNames[i];
+			 // 替换表前缀
+			_tableName=string.IsNullOrEmpty(MssqlHelper.prefix)?tableName: tableName.Replace(MssqlHelper.prefix,"");
+
+			if(i==tableNames.Count()-1){
+				codeStr+="\t\t\tnew KeyValue() { Key=\""+_tableName+"\",Value=\""+tableName+"\"}\r\n";
+            }
+			else{
+				codeStr+="\t\t\tnew KeyValue() { Key=\""+_tableName+"\",Value=\""+tableName+"\"},\r\n";
+            }
+        }
+
+		codeStr+="\t\t};\r\n";
+
+        // 生成类声明结束符
+        codeStr += "\t}\r\n";
+        codeStr += "}";
+
+        // 保存文件
+        CreateFile(solutionDir + @"App.ORM\SqlSugarTablesMapping.cs", codeStr, Encoding.UTF8);
+
+        // 包含项目
+        ContainFileToCsproj(@"SqlSugarTablesMapping.cs", solutionDir, "App.ORM");
     }
 }
 

@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SqlSugar">
+    <Reference Include="SqlSugar, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\App.Vector\SqlSugar\SqlSugar.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -44,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SqlSugarTablesMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlSugarInstance.cs" />
     <Compile Include="T4GenerateClient.cs">

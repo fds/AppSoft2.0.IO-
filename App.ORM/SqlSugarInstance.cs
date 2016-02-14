@@ -1,4 +1,5 @@
 ﻿using SqlSugar;
+using System.Collections.Generic;
 
 /*!
  * 文件名称：返回SqlSugarClient实体类
@@ -12,7 +13,7 @@
 
 namespace App.ORM
 {
-    public class SqlSugarInstance
+    public partial class SqlSugarInstance
     {
         #region 构造：无参构造函数，禁止实例化 + public SqlSugarInstance()
         /// <summary>
@@ -31,7 +32,13 @@ namespace App.ORM
         public static SqlSugarClient GetInstance()
         {
             string connection = System.Configuration.ConfigurationManager.ConnectionStrings[@"AppSoft.IO_ConnStr"].ToString();
-            return new SqlSugarClient(connection);
+
+            SqlSugarClient _SqlSugarClient = new SqlSugarClient(connection);
+
+            // 映射表，解决类名和表名不一致情况，通常体现在表名加前缀，类名不加
+            _SqlSugarClient.SetMappingTables(_MappingTables);
+
+            return _SqlSugarClient;
         }
         #endregion
     }
