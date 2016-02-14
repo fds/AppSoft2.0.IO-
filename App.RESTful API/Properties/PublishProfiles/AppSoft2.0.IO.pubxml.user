@@ -13,16 +13,16 @@
       <publishTime>02/11/2016 22:25:17</publishTime>
     </File>
     <File Include="bin/App.Entity.dll">
-      <publishTime>02/13/2016 23:38:18</publishTime>
+      <publishTime>02/14/2016 15:34:09</publishTime>
     </File>
     <File Include="bin/App.IServices.dll">
-      <publishTime>02/13/2016 23:38:18</publishTime>
+      <publishTime>02/14/2016 15:34:09</publishTime>
     </File>
     <File Include="bin/App.Library.dll">
       <publishTime>02/13/2016 23:38:18</publishTime>
     </File>
     <File Include="bin/App.RESTful API.dll">
-      <publishTime>02/13/2016 23:38:24</publishTime>
+      <publishTime>02/14/2016 15:34:15</publishTime>
     </File>
     <File Include="bin/App.Vector.dll">
       <publishTime>02/13/2016 23:38:18</publishTime>
@@ -31,10 +31,10 @@
       <publishTime>02/11/2016 22:25:17</publishTime>
     </File>
     <File Include="bin/AppSoft2.0.IO.dll">
-      <publishTime>02/13/2016 23:39:05</publishTime>
+      <publishTime>02/14/2016 15:34:46</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>02/13/2016 23:39:05</publishTime>
+      <publishTime>02/14/2016 15:34:46</publishTime>
     </File>
     <File Include="bin/Autofac.Configuration.dll">
       <publishTime>02/10/2016 05:08:13</publishTime>
@@ -145,7 +145,7 @@
       <publishTime>02/11/2016 22:26:20</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>02/13/2016 23:38:26</publishTime>
+      <publishTime>02/14/2016 15:34:17</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>02/13/2016 23:38:25</publishTime>
