@@ -48,6 +48,7 @@
 * N层架构（抽象工厂，自动工厂，OOP，AOP）
 * **ASP.NET MVC 5/Web API2.1**
 * **.NET Framework 4.6.1**
+* ** MVC 插件式开发，支持热拔插 **
 * Autofac 3.5.2
 * [SqlSugar](https://github.com/sunkaixuan/SqlSugar) | [文档说明](http://www.cnblogs.com/sunkaixuan/p/4649904.html)
 * Redis
