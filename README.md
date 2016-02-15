@@ -239,6 +239,28 @@ _IUserServices.Insert(new UserEntity(){
 
 *****
 
+### 其他附件图：
+
+*****
+
+* MVC请求机制简图
+
+![输入图片说明](http://git.oschina.net/uploads/images/2016/0215/122618_acffb4e2_526496.png "在这里输入图片标题")
+
+*****
+
+* MVC整体请求流程图
+
+![输入图片说明](http://git.oschina.net/uploads/images/2016/0215/122652_ebf12c84_526496.png "在这里输入图片标题")
+
+*****
+
+* 工厂创建类和视图引擎类的作用介绍（插件实现原理）
+
+![输入图片说明](http://git.oschina.net/uploads/images/2016/0215/122731_a4241ebf_526496.png "在这里输入图片标题")
+
+*****
+
 ### AppSoft2.0.IO 欢迎捐赠
 
 *****
