@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.WebPages.Razor;
 
+/*!
+ * 文件名称：实现插件开发自定义视图引擎
+ * 文件作者：新生帝
+ * 编写日期：2016年02月14日
+ * 版权所有：中山赢友网络科技有限公司
+ * 企业官网：http://www.winu.net
+ * 开源协议：GPL v2 License
+ * 文件描述：一切从简，只为了更懒！
+ */
 namespace App.PluginFactory
 {
     public class PluginRazorViewEngine : RazorViewEngine
