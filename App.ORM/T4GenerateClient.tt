@@ -1,4 +1,4 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
@@ -14,18 +14,14 @@
 //  * 企业官网：http://www.winu.net
 //  * 开源协议：GPL v2 License
 //  * 文件描述：一切从简，只为了更懒！
-//  * 使用步骤：1、修改下面 solutionDir 目录路径，必须是电脑对应的绝对路径并带 \ 结尾。
+//  * 使用步骤：1、设置数据库连接字符串
 //  *                 2、设置表前缀 prefix 字符串，通常用于一个数据库有多个系统的问题，表前缀必须是 "字母/数字_"格式
-//  *                 3、设置数据库连接字符串
-//  *                 4、使用快捷键：Ctrl+S 或者点击工具栏 保存 按钮即可生成所有文件。
-//  *                 5、生成成功之后会弹出提示框，提示是否加载，选择全部加载！
+//  *                 3、使用快捷键：Ctrl+S 或者点击工具栏 保存 按钮即可生成所有文件。
+//  *                 4、生成成功之后会弹出提示框，提示是否加载，选择全部加载！
 //  * 特别注意：重新保存文件会导致代码重新生成，请慎重使用！
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// 设置解决方案目录：string solutionDir=@"F:\Github\AppSoft2.0.IO\";
-
-<# string solutionDir=@"F:\Github\AppSoft2.0.IO\"; #>
 
 // 设置数据库连接字符串：MssqlHelper.connStr="Server=DESKTOP-ADRG1K6;Database=DotDot;Uid=sa;Password=000000;";
 
@@ -35,9 +31,16 @@
 
 <# MssqlHelper.prefix="Dot_"; #>
 
+
+// ######################################### 完美分割线 #####################################################
+
 // 获取数据库所有的表和视图：List<string> tableNames=MssqlHelper.GetTables();
 
 <# List<string> tableNames=MssqlHelper.GetTables();  #>
+
+// 获取解决方案目录：string solutionDir=Host.ResolveAssemblyReference("$(SolutionDir)");
+
+<# string solutionDir=Host.ResolveAssemblyReference("$(SolutionDir)"); #>
 
 <# foreach (string tableName in tableNames){ #>
 
