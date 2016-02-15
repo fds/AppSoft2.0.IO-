@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -17,6 +18,9 @@ namespace App.RESTful_API
             GlobalConfiguration.Configure(WebApiConfig.Register);
             // 设置默认将所有对象自动输出为Json格式
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
+
+            // 日记记录
+            log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/Web.config")));
         }
     }
 }

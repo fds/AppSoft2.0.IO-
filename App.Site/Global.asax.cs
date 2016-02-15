@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
 using App.PluginFactory;
+using System.IO;
 
 namespace App.Site
 {
@@ -29,6 +30,9 @@ namespace App.Site
             //移除当前MVC主站点中的所有视图引擎，采用自定义视图引擎
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new PluginRazorViewEngine());
+
+            // 日记记录
+            log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/Web.config")));
         }
     }
 }

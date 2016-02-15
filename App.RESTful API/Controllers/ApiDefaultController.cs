@@ -13,6 +13,8 @@ namespace App.RESTful_API.Controllers
     // 继承BaseApiController
     public class ApiDefaultController : BaseApiController
     {
+        readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         // 构造方法注入
         public ApiDefaultController(IUserServices _IUserServices)
         {

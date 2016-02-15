@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("App.Entity")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("作者：新生帝；开发理念：一切从简，只为了更懒！")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("中山赢友网络科技有限公司")]
 [assembly: AssemblyProduct("App.Entity")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © 中山赢友网络科技有限公司 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
