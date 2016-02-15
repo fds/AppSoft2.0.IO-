@@ -146,7 +146,7 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-* 打开解决方案中`App.ORM`中`T4GenerateClient.tt`T4模板文件，设置`solutionDir`为你解决方案的绝对物理路径，以及`MssqlHelper.connStr`为数据库链接字符串，还可以设置`MssqlHelper.prefix`来设置表前缀，支持一个数据库多个系统开发。
+* 打开解决方案中`App.ORM`中`T4GenerateClient.tt`T4模板文件，`MssqlHelper.connStr`为数据库链接字符串，还可以设置`MssqlHelper.prefix`来设置表前缀，支持一个数据库多个系统开发。
 
 *****
 
