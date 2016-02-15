@@ -79,34 +79,32 @@ namespace App.PluginFactory
             base.MasterLocationFormats = ViewLocationFormats;
 
             // 重写视图引擎将 视图编译成前台页面类的方法
-            RazorBuildProvider.CodeGenerationStarted += RazorBuildProvider_CodeGenerationStarted;
-            return base.FindView(controllerContext, viewName, masterName, useCache);
-        }
-
-        private void RazorBuildProvider_CodeGenerationStarted(object sender, EventArgs e)
-        {
-            RazorBuildProvider provider = sender as RazorBuildProvider;
-
-            // 获取当前网站运行目录
-            string sitePath = AppDomain.CurrentDomain.BaseDirectory;
-
-            // 获取插件目录，默认放在Plugins文件夹下面
-            string pluginsPath = sitePath + "Plugins";
-
-            // 搜索插件下所有的dll程序集
-            string[] pluginDLLs = Directory.GetFiles(pluginsPath, "*.dll", SearchOption.AllDirectories);
-
-            // 将搜索到的dll载入当前运行程序集中
-            if (pluginDLLs.Any())
+            RazorBuildProvider.CodeGenerationStarted += (object sender, EventArgs e) =>
             {
-                foreach (string currentPluginDLL in pluginDLLs)
-                {
-                    Assembly ass = Assembly.LoadFile(currentPluginDLL);
+                RazorBuildProvider provider = sender as RazorBuildProvider;
 
-                    //将ass 添加为视图前台页面类的引用程序集
-                    provider.AssemblyBuilder.AddAssemblyReference(ass);
+                // 获取当前网站运行目录
+                string sitePath = AppDomain.CurrentDomain.BaseDirectory;
+
+                // 获取插件目录，默认放在Plugins文件夹下面
+                string pluginsPath = sitePath + "Plugins";
+
+                // 搜索插件下所有的dll程序集
+                string[] pluginDLLs = Directory.GetFiles(pluginsPath, "*.dll", SearchOption.AllDirectories);
+
+                // 将搜索到的dll载入当前运行程序集中
+                if (pluginDLLs.Any())
+                {
+                    foreach (string currentPluginDLL in pluginDLLs)
+                    {
+                        Assembly ass = Assembly.LoadFile(currentPluginDLL);
+
+                        //将ass 添加为视图前台页面类的引用程序集
+                        provider.AssemblyBuilder.AddAssemblyReference(ass);
+                    }
                 }
-            }
+            };
+            return base.FindView(controllerContext, viewName, masterName, useCache);
         }
     }
 }
