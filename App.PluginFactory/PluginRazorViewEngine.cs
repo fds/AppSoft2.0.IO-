@@ -85,7 +85,7 @@ namespace App.PluginFactory
             string pluginsPath = sitePath + "Plugins";
 
             // 搜索插件下所有的dll程序集
-            string[] pluginDLLs = Directory.GetFiles(pluginsPath, "App." + pluginName + ".dll", SearchOption.AllDirectories);
+            string[] pluginDLLs = Directory.GetFiles(pluginsPath, "*.dll", SearchOption.AllDirectories);
 
             // 将搜索到的dll载入当前运行程序集中
             if (pluginDLLs.Any())

@@ -196,7 +196,7 @@ public class MssqlHelper
         return File.Exists(filePath);
     }
 
-    // 包含到项目文件中
+    // 将生成的文体包含到项目中
     public static void ContainFileToCsproj(string fileName, string solutionDir, string csprojName)
     {
         string path = solutionDir + csprojName + @"\" + csprojName + ".csproj";
@@ -206,10 +206,9 @@ public class MssqlHelper
         string xmlns = "{" + root.Attribute("xmlns").Value + "}";
         IEnumerable<XElement> compileList = root.Elements(xmlns + "ItemGroup").Elements(xmlns + "Compile");
         XElement itemGroup = compileList.FirstOrDefault().Parent;
-        if (compileList.Where(u => u.Attribute("Include").Value == fileName).Count() > 0)
-        {
-            compileList.Where(u => u.Attribute("Include").Value == fileName).Remove();
-        }
+
+		var _file=compileList.Where(u => u.Attribute("Include").Value == fileName);
+        if (_file.Count() > 0)  _file.Remove();
 
         XElement compile = new XElement(xmlns + "Compile");
         compile.SetAttributeValue("Include", fileName);
