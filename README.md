@@ -57,12 +57,12 @@
 * Lucence.NET
 * NPOI
 * SuperSocket
-* Senparc.Weixin.MP
+* [Senparc.Weixin.MP](https://github.com/JeffreySu/WeiXinMPSDK) | [系列教程](http://www.cnblogs.com/szw/archive/2013/05/14/weixin-course-index.html)
 * AutoMapper
 * i18n
 * RBAC
 * WorkFlow
-* nVelocity
+* [RazorEngine](https://github.com/Antaris/RazorEngine) | [文档说明](http://www.cnblogs.com/huangxincheng/p/3644313.html)
 * SQL Server 2005 + 
 
 *****
