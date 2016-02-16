@@ -49,16 +49,16 @@
 * **ASP.NET MVC 5/Web API2.1**
 * **.NET Framework 4.6.1**
 * **MVC 插件式开发，支持热拔插**
-* Autofac 3.5.2
+* [Autofac](https://github.com/autofac/Autofac) | [文档说明](http://docs.autofac.org/en/latest/)
 * [SqlSugar](https://github.com/sunkaixuan/SqlSugar) | [文档说明](http://www.cnblogs.com/sunkaixuan/p/4649904.html)
-* Redis
-* Log4Net
-* Quartz.Net
-* Lucence.NET
-* NPOI
-* SuperSocket
+* [Redis](https://github.com/MSOpenTech/redis) | [文档说明](http://www.cnblogs.com/yangecnu/p/Introduct-Redis-in-DotNET.html)
+* [Log4Net](https://logging.apache.org/log4net/)
+* [Quartz.Net](http://www.quartz-scheduler.net/)
+* [Lucence.NET](http://lucence.net/)
+* [NPOI](http://npoi.codeplex.com/)
+* [SuperWebSocket](https://github.com/kerryjiang/SuperWebSocket)
 * [Senparc.Weixin.MP](https://github.com/JeffreySu/WeiXinMPSDK) | [系列教程](http://www.cnblogs.com/szw/archive/2013/05/14/weixin-course-index.html)
-* AutoMapper
+* [AutoMapper](https://github.com/AutoMapper/AutoMapper)
 * i18n
 * RBAC
 * WorkFlow
