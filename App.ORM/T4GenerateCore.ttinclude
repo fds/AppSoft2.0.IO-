@@ -284,13 +284,14 @@ public class MssqlHelper
             {
                 // 生成字段描述
                 codeStr += "\t\t/// <summary>\r\n";
-                codeStr += "\t\t/// " + tableColumn.COLUMN_DESCRIPTION + "\r\n";
+                codeStr += "\t\t/// 描述：" + tableColumn.COLUMN_DESCRIPTION + "\r\n";
+				codeStr += "\t\t/// 可空：" +(Convert.ToInt32(tableColumn.IS_NULLABLE)==0?"不为空":"空") + "\r\n";
                 codeStr += "\t\t/// </summary>\r\n";
 
 				// 序列化
 				codeStr += "\t\t[DataMember]\r\n";
                 // 生成属性
-                codeStr += "\t\tpublic " + SqlServerDbTypeMap.MapCsharpType(tableColumn.DATA_TYPE.ToString()) + " " + tableColumn.COLUMN_NAME.ToString() + " { get; set; }\r\n\r\n";
+                codeStr += "\t\tpublic " + SqlServerDbTypeMap.MapCsharpType(tableColumn.DATA_TYPE.ToString()) +" "+ tableColumn.COLUMN_NAME.ToString() + " { get; set; }\r\n\r\n";
             }
 
             // 生成类声明结束符
