@@ -2,7 +2,7 @@
 
 *****
 
-> AppSoft2.0.IO 摒弃了Entity Framework，采用[SqlSugar](https://github.com/sunkaixuan/SqlSugar)框架，[SqlSugar](https://github.com/sunkaixuan/SqlSugar)是众多ORM框架中性能最接近ADO.NET的ORM框架！
+> AppSoft2.0.IO 摒弃了Entity Framework，采用[SqlSugar](https://github.com/sunkaixuan/SqlSugar)框架，[SqlSugar](https://github.com/sunkaixuan/SqlSugar)是众多.NET ORM框架中性能最接近ADO.NET，开发效率超越Entity Framework的ORM框架！
 
 *****
 
