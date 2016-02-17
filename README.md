@@ -126,100 +126,19 @@ AppSoft2.0.IO  解决方案目录
 
 *****
 
-### AppSoft2.0.IO 系统初始化步骤：
+### AppSoft2.0.IO 视频教程（采用屏幕录像机录制，直接下载exe即可）：
 
 *****
 
-* 下载 [AppSoft2.0.IO]([http://git.oschina.net/winu.net/AppSoft2.0.IO/](AppSoft2.0.IO))
+* [1.0 AppSoft2.0.IO 视频教程——项目初始化](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
 
 *****
 
-* AppSoft2.0.IO是使用Visual Studio 2015编写的，意在开发适应未来的系统框架，支持Visual Studio 2012以上（包括）软件打开。
+* [2.0 AppSoft2.0.IO 视频教程——T4模板生成所有相关文件](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
 
 *****
 
-* 打开`AppSoft2.0.IO.sln`解决方案后，设置`App.RESTful API`（Web API）或`App.Site`（MVC + WebAPI）为项目启动项，取决你是做Web开发或者Api接口开发。
-
-*****
-
-* 设置的上述设置的启动项目中的`Web.config`文件`connectionStrings`节点为数据库链接字符串。
-
-*****
-
-* 打开解决方案中`App.ORM`中`T4GenerateClient.tt`T4模板文件，`MssqlHelper.connStr`为数据库链接字符串，还可以设置`MssqlHelper.prefix`来设置表前缀，支持一个数据库多个系统开发。
-
-*****
-
-* 使用快捷键`Ctrl+S`或者点击工具栏`保存`按钮，保存`T4GenerateClient.tt`文件，这时T4模板文件会自动生成所有层的代码，一般数据库表结构发生改变都应该执行保存一次。
-
-*****
-
-* 生成成功之后编辑器会提示`项目已被修改，是否重新加载`提示框，点击`全部重新加载`按钮即可，项目会自动生成所需文件和自动包含指定文件到指定目录。
-
-*****
-
-* 右键`App.Repository`和`App.Services`项目，选择`属性`，点击左边的菜单`生成`，并设置`输出路径`为`..\App.RESTful API\bin\`或者`..\App.Site\bin\`，这里取决于你设置哪个项目为启动项（`App.RESTful API`或`App.Site`），这里主要是为了`Autofac`依赖注入和控制反转作用的。
-
-*****
-
-* 加载完毕之后，右击`解决方案文件`，选择`重新生成解决方案`按钮，项目重新生成成功之后，整个项目初始化也就完成了！
-
-*****
-
-### AppSoft2.0.IO 项目实战代码：
-
-*****
-
-* 在`App.RESTful API`或者`App.Site`项目`Controllers`文件夹下创建对应控制器（补充：`App.RESTful API`项目创建`Web API控制器`,`App.Site`项目创建`MVC控制器`）。
-
-*****
-
-* 将新增的控制器继承`父控制器`（补充：`App.RESTful API`项目下的`Web API控制器应`继承`BaseApiController`,`App.Site`项目下的`MVC控制器`应继承`BaseController`）
-
-*****
-
-* 在控制器中头部引入`App.Entity;`和`App.IServices;`命名空间。
-
-*****
-
-* 编写控制器有参构造方法，将需要操作的服务接口声明为构造函数的形参，主要作用是项目启动时，Autofac会向控制器构造方法注入服务和仓储实例对象，如：
-
-
-```C#
-// ApiDefaultController为上面新增控制器的名称，可以同时注入多个服务接口
-
-public ApiDefaultController(IUserServices _IUserServices)
-{
-    base._IUserServices = _IUserServices;
-}
-
-```
-
-*****
-
-* 可以调用接口对应的方法完成基本的CURD（增改查删）操作，甚至更复杂的操作，如：
-
-
-```C#
-// 新增操作
-
-_IUserServices.Insert(new UserEntity(){
-    UserName='新生帝'
-});
-
-// 更新操作
-
-...
-
-// 删除操作
-
-...
-
-// 查询操作
-
-...
-
-```
+* [3.0 AppSoft2.0.IO 视频教程——项目实战CURD操作](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
 
 *****
 
