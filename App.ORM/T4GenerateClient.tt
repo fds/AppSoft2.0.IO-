@@ -25,9 +25,9 @@
 
 // 设置数据库连接字符串：MssqlHelper.connStr="Server=DESKTOP-ADRG1K6;Database=DotDot;Uid=sa;Password=000000;";
 
-<# MssqlHelper.connStr="Server=DESKTOP-ADRG1K6;Database=DotDot;Uid=sa;Password=000000;"; #>
+<# MssqlHelper.connStr="Server=WLN;Database=AppSoft2.0.IO;Uid=sa;Password=000000;"; #>
 
-// 设置表前缀：MssqlHelper.prefix="";
+// 设置表前缀：MssqlHelper.prefix=""; 可为空。
 
 <# MssqlHelper.prefix="Dot_"; #>
 

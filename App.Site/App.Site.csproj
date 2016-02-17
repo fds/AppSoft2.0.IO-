@@ -183,8 +183,8 @@
     <Content Include="App_Data\README.md" />
     <Content Include="Plugins\TestPlugin\Views\Default\Index.cshtml" />
     <Content Include="Plugins\TestPlugin\Views\web.config" />
-    <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Plugins\README.md" />
+    <Content Include="Views\Default\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

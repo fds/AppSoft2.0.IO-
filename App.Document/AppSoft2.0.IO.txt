@@ -1,0 +1,89 @@
+﻿大家好，我是新生帝，是一个.NET开发程序员，已有8年的项目开发经验，AppSoft2.0.IO是目前我所在公司 中山赢友网络科技有限公司 开源的一套产品项目
+本项目全部由本人设计和开发。
+
+### AppSoft2.0.IO介绍
+
+AppSoft2.0.IO是基于.NET平台，使用C#语言开发的通用Web系统框架，目前集成了Web软件系统的基本骨架，直接可以在目前架构基础上进行开发。
+
+AppSoft2.0.IO 使用ASP.NET MVC 5开发，采用N层架构，抽象工厂模式，面向接口编程，并使用Autofac做依赖注入和控制反转，更多功能会在视频教程中具体介绍。
+
+更多详细介绍可以查看：http://git.oschina.net/winu.net/AppSoft2.0.IO中的README.md文件介绍。
+
+
+### AppSoft2.0.IO 项目初始化
+
+1、从开源平台下载最新的源码：http://git.oschina.net/winu.net/AppSoft2.0.IO
+
+2、使用Visual Studio 2012以上的版本IDE打开AppSoft2.0.IO源码
+
+3、清理解决方案，并重写生成整个解决方案
+
+4、选择你要开发项目的类型，本次视频教程是使用网站做示例，也就是项目App.Site，而App.RESTful API是WebAPI2.1接口项目。
+
+5、由于AppSoft2.0.IO整个项目采用Autofac进行依赖注入，所以需要将App.Services和App.App.Repository设置生成程序集为App.Site/bin目录下。
+
+6、设置App.Site中 Web.config连接字符串为你的数据库连接字符串
+
+7、同时设置App.ORM下的T4GenerateClient.tt文件的连接字符串，还可以设置数据库表的前缀
+
+8、项目初始化完毕！
+
+
+### AppSoft2.0.IO 通过T4模板生成所有的实体类和CURD操作
+
+补充：一般先设计好数据库的表，再进行操作。
+
+1、打开App.ORM项目的T4GenerateClient.tt，配置好对应连接字符串，还可以设置数据库表的前缀（这里的前缀就是Dot_)
+
+2、设置好了之后，直接使用快捷键Ctrl+S，或者点击保存按钮，即可生成所有的类和文件，并自动包含到项目中。
+
+3、T4模板主要生成了以下文件：
+1) App.Entity 实体类文件
+2) App.IRepository 仓储接口层仓储接口类文件
+3) App.Repository 仓储层仓储类文件
+4) App.IServices 服务接口层服务接口类文件
+5) App.Services 服务层服务类文件
+6) App.Site/App_code/BaseController.cs父控制器文件
+7) App.RESTful API/App_code/BaseApiController.cs父接口控制器文件
+8) App.ORM 实体和表映射关系SqlSugarTablesMapping.cs
+
+4、重新清理解决方案，并重新生成。
+
+
+
+
+### AppSoft2.0.IO 项目实战 CURD操作，包括新增，修改，删除，更新，分页，执行存储过程等等。
+
+1、在App.Site的Controllers文件夹新建一个控制器，并继承BaseController
+
+2、引入App.Entity和App.IServices命名空间
+
+3、编写构造方法实现Autofac依赖注入
+
+4、基本的CURD操作示例
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
