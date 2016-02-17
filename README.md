@@ -22,6 +22,22 @@
 
 *****
 
+### AppSoft2.0.IO 视频教程（采用屏幕录像机录制，直接下载exe即可）（持续更新）：
+
+*****
+
+* [1.0 AppSoft2.0.IO 视频教程——项目初始化](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
+
+*****
+
+* [2.0 AppSoft2.0.IO 视频教程——T4模板生成所有相关文件](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
+
+*****
+
+* [3.0 AppSoft2.0.IO 视频教程——项目实战CURD操作](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
+
+*****
+
 ### AppSoft2.0 IO 主要特点：
 
 *****
@@ -123,22 +139,6 @@ AppSoft2.0.IO  解决方案目录
 * 微型论坛社区系统
 * 电商系统（产品，订单）
 * 开放平台RESTfull API接口
-
-*****
-
-### AppSoft2.0.IO 视频教程（采用屏幕录像机录制，直接下载exe即可）：
-
-*****
-
-* [1.0 AppSoft2.0.IO 视频教程——项目初始化](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
-
-*****
-
-* [2.0 AppSoft2.0.IO 视频教程——T4模板生成所有相关文件](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
-
-*****
-
-* [3.0 AppSoft2.0.IO 视频教程——项目实战CURD操作](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
 
 *****
 
