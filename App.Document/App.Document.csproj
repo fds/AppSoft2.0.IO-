@@ -47,6 +47,7 @@
     <Content Include="1.0 AppSoft2.0.IO 视频教程——项目初始化.exe" />
     <Content Include="2.0 AppSoft2.0.IO 视频教程——T4模板生成所有相关文件.exe" />
     <Content Include="3.0 AppSoft2.0.IO 视频教程——项目实战CURD操作.exe" />
+    <Content Include="4.0 AppSoft2.0.IO 视频教程——插件开发教程.exe" />
     <Content Include="AppSoft2.0.IO.txt" />
     <Content Include="README.md" />
   </ItemGroup>

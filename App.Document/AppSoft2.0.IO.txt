@@ -10,6 +10,10 @@ AppSoft2.0.IO 使用ASP.NET MVC 5开发，采用N层架构，抽象工厂模式�
 更多详细介绍可以查看：http://git.oschina.net/winu.net/AppSoft2.0.IO中的README.md文件介绍。
 
 
+########################################################### 完美分割线 ###########################################################
+
+
+
 ### AppSoft2.0.IO 项目初始化
 
 1、从开源平台下载最新的源码：http://git.oschina.net/winu.net/AppSoft2.0.IO
@@ -64,7 +68,54 @@ AppSoft2.0.IO 使用ASP.NET MVC 5开发，采用N层架构，抽象工厂模式�
 
 
 
+### AppSoft2.0.IO 如何开发插件（基础使用）
 
+1、创建一个ASP.NET MVC项目，项目命名必须遵循命名规则（后续会开放自定义）App.插件名称Plugin
+
+2、配置MVC 路由规则，并配置插件名称，插件名称也必须遵循命名规则：插件名称Plugin，特别注意：插件路由规则必须设置优先级别最高，也就是放在第一个默认路由规则
+
+路由规则配置如下：
+
+// 定义插件路由
+routes.MapRoute(
+    name: "PluginRoute",
+    url: "{controller}/{action}/{pluginName}/{id}",
+    defaults: new { controller = "Default", action = "Index", pluginName = "TestPlugin", id = UrlParameter.Optional },
+    constraints: new { pluginName = @"^[0-9a-zA-Z]+Plugin$" }
+);
+
+3、编写项目代码。
+
+4、开发好插件之后，将插件所有使用的dll程序集和视图文件、资源文件或者相关文件复制到主站 App.Site项目的Plugins目录下，并且创建新的插件文件夹
+
+插件文件夹命名也必须遵循命名规则：插件名称Plugin
+
+如：
+
+App.Site 主站文件夹
+├─Plugins 插件目录
+|  ├─TestPlugin 插件1目录
+|  |  ├─Libs 程序集DLL
+|  |  ├─Views 视图目录
+|  |  ├─Scripts 脚本目录
+|  |  ├─Content 样式目录
+|  |  ├─Others 其他目录
+
+
+5、在主站中访问插件规则：域名/IP地址/区域/控制器/Action/插件名称/参数
+
+如：http://www.winu.net/Default/Index/TestPlugin/
+
+
+6、现在我们在App.Site中访问刚刚开发的MyFirst插件，完全独立开来的项目，现在可以在App.Site中去访问。
+
+MyFirstPlugin插件的地址是：http://localhost:5975/default/echoview
+
+App.Site地址是：http://localhost:35203/  
+
+注意端口不一样。现在我们在App.Site中访问MyFirst
+
+好了，开发完成。。。
 
 
 
