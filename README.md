@@ -38,6 +38,10 @@
 
 *****
 
+* [4.0 AppSoft2.0.IO 视频教程——插件开发教程](http://git.oschina.net/winu.net/AppSoft2.0.IO/tree/master/App.Document)
+
+*****
+
 ### AppSoft2.0 IO 主要特点：
 
 *****
